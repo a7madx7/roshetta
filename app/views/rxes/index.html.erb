@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rxes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Expires at</th>
+      <th>Total value</th>
+      <th>Dispensed count</th>
+      <th>Patient</th>
+      <th>Dispenser</th>
+      <th>Issuer</th>
+      <th>Short diagnosis</th>
+      <th>Full diagnosis</th>
+      <th>Allowed dispense count</th>
+      <th>Status</th>
+      <th>Visibility</th>
+      <th>Picture</th>
+      <th>Expired</th>
+      <th>Professional comment</th>
+      <th>Starts at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rxes.each do |rx| %>
+      <tr>
+        <td><%= rx.expires_at %></td>
+        <td><%= rx.total_value %></td>
+        <td><%= rx.dispensed_count %></td>
+        <td><%= rx.patient_id %></td>
+        <td><%= rx.dispenser_id %></td>
+        <td><%= rx.issuer_id %></td>
+        <td><%= rx.short_diagnosis %></td>
+        <td><%= rx.full_diagnosis %></td>
+        <td><%= rx.allowed_dispense_count %></td>
+        <td><%= rx.status %></td>
+        <td><%= rx.visibility %></td>
+        <td><%= rx.picture %></td>
+        <td><%= rx.expired %></td>
+        <td><%= rx.professional_comment %></td>
+        <td><%= rx.starts_at %></td>
+        <td><%= link_to 'Show', rx %></td>
+        <td><%= link_to 'Edit', edit_rx_path(rx) %></td>
+        <td><%= link_to 'Destroy', rx, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rx', new_rx_path %>

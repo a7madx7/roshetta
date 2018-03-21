@@ -1,0 +1,92 @@
+<%= form_with(model: rx, local: true) do |form| %>
+  <% if rx.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rx.errors.count, "error") %> prohibited this rx from being saved:</h2>
+
+      <ul>
+      <% rx.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :expires_at %>
+    <%= form.datetime_select :expires_at, id: :rx_expires_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total_value %>
+    <%= form.text_field :total_value, id: :rx_total_value %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dispensed_count %>
+    <%= form.number_field :dispensed_count, id: :rx_dispensed_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :patient_id %>
+    <%= form.number_field :patient_id, id: :rx_patient_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dispenser_id %>
+    <%= form.number_field :dispenser_id, id: :rx_dispenser_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :issuer_id %>
+    <%= form.number_field :issuer_id, id: :rx_issuer_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :short_diagnosis %>
+    <%= form.text_field :short_diagnosis, id: :rx_short_diagnosis %>
+  </div>
+
+  <div class="field">
+    <%= form.label :full_diagnosis %>
+    <%= form.text_area :full_diagnosis, id: :rx_full_diagnosis %>
+  </div>
+
+  <div class="field">
+    <%= form.label :allowed_dispense_count %>
+    <%= form.number_field :allowed_dispense_count, id: :rx_allowed_dispense_count %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status, id: :rx_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :visibility %>
+    <%= form.text_field :visibility, id: :rx_visibility %>
+  </div>
+
+  <div class="field">
+    <%= form.label :picture %>
+    <%= form.text_field :picture, id: :rx_picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :expired %>
+    <%= form.check_box :expired, id: :rx_expired %>
+  </div>
+
+  <div class="field">
+    <%= form.label :professional_comment %>
+    <%= form.text_area :professional_comment, id: :rx_professional_comment %>
+  </div>
+
+  <div class="field">
+    <%= form.label :starts_at %>
+    <%= form.datetime_select :starts_at, id: :rx_starts_at %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

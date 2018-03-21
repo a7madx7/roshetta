@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Expires at:</strong>
+  <%= @rx.expires_at %>
+</p>
+
+<p>
+  <strong>Total value:</strong>
+  <%= @rx.total_value %>
+</p>
+
+<p>
+  <strong>Dispensed count:</strong>
+  <%= @rx.dispensed_count %>
+</p>
+
+<p>
+  <strong>Patient:</strong>
+  <%= @rx.patient_id %>
+</p>
+
+<p>
+  <strong>Dispenser:</strong>
+  <%= @rx.dispenser_id %>
+</p>
+
+<p>
+  <strong>Issuer:</strong>
+  <%= @rx.issuer_id %>
+</p>
+
+<p>
+  <strong>Short diagnosis:</strong>
+  <%= @rx.short_diagnosis %>
+</p>
+
+<p>
+  <strong>Full diagnosis:</strong>
+  <%= @rx.full_diagnosis %>
+</p>
+
+<p>
+  <strong>Allowed dispense count:</strong>
+  <%= @rx.allowed_dispense_count %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @rx.status %>
+</p>
+
+<p>
+  <strong>Visibility:</strong>
+  <%= @rx.visibility %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @rx.picture %>
+</p>
+
+<p>
+  <strong>Expired:</strong>
+  <%= @rx.expired %>
+</p>
+
+<p>
+  <strong>Professional comment:</strong>
+  <%= @rx.professional_comment %>
+</p>
+
+<p>
+  <strong>Starts at:</strong>
+  <%= @rx.starts_at %>
+</p>
+
+<%= link_to 'Edit', edit_rx_path(@rx) %> |
+<%= link_to 'Back', rxes_path %>

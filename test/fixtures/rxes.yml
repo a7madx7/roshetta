@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  expires_at: 2018-03-21 02:43:31
+  total_value: 9.99
+  dispensed_count: 1
+  patient_id: 1
+  dispenser_id: 1
+  issuer_id: 1
+  short_diagnosis: MyString
+  full_diagnosis: MyText
+  allowed_dispense_count: 1
+  status: MyString
+  visibility: MyString
+  picture: MyString
+  expired: false
+  professional_comment: MyText
+  starts_at: 2018-03-21 02:43:31
+
+two:
+  expires_at: 2018-03-21 02:43:31
+  total_value: 9.99
+  dispensed_count: 1
+  patient_id: 1
+  dispenser_id: 1
+  issuer_id: 1
+  short_diagnosis: MyString
+  full_diagnosis: MyText
+  allowed_dispense_count: 1
+  status: MyString
+  visibility: MyString
+  picture: MyString
+  expired: false
+  professional_comment: MyText
+  starts_at: 2018-03-21 02:43:31
