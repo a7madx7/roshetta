@@ -56,5 +56,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'simple_form'
 gem 'friendly_id'
-# gem 'rails-simple-search'
+gem 'vuejs-rails'
 gem 'will_paginate'

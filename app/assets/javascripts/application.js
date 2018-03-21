@@ -9,7 +9,10 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require vue
+//= require vue-router (optional)
+//= require vue-resource (optional)
+//= require vuex (optional)
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
