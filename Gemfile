@@ -39,6 +39,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'ffaker'
+  gem 'factory_bot'
 end
 
 group :development do
@@ -58,3 +60,6 @@ gem 'simple_form'
 gem 'friendly_id'
 gem 'vuejs-rails'
 gem 'will_paginate'
+gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
+gem 'cancan'

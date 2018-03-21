@@ -1,6 +1,6 @@
 class RxesController < ApplicationController
   before_action :set_rx, only: [:show, :edit, :update, :destroy]
-
+ 
   # GET /rxes
   # GET /rxes.json
   def index
