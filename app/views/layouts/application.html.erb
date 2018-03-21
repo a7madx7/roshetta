@@ -7,9 +7,13 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="container">
     <%= yield %>
   </body>
   
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <%- if Rails.env.development? %>
+    <%= debug params %>
+  <% end %>
 </html>
