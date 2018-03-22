@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  price: 9.99
+  company: MyString
+  market_available: false
+  professional_comment: MyText
+  invented_at: 2018-03-22 23:35:03
+  market_status: MyString
+
+two:
+  name: MyString
+  price: 9.99
+  company: MyString
+  market_available: false
+  professional_comment: MyText
+  invented_at: 2018-03-22 23:35:03
+  market_status: MyString

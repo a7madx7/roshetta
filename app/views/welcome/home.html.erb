@@ -116,7 +116,15 @@
 				<span class="morphsearch-close"></span>
 			</div><!-- /morphsearch -->
 			<header class="codrops-header">
-				<h1>Roshetta<span>Search everything from prescriptions to physicians.</span></h1>
+        <h1>
+          Roshetta
+          <span>Search everything from prescriptions to physicians.</span>
+        </h1>
+        <h2>
+          <% unless current_user %>
+            <%= link_to 'Sign up', new_user_registration_path %>
+          <% end %>
+        </h2>
 			</header>
 			<div class="overlay"></div>
 		</div><!-- /container -->

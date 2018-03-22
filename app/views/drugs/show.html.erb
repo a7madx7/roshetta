@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @drug.name %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @drug.price %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @drug.company %>
+</p>
+
+<p>
+  <strong>Market available:</strong>
+  <%= @drug.market_available %>
+</p>
+
+<p>
+  <strong>Professional comment:</strong>
+  <%= @drug.professional_comment %>
+</p>
+
+<p>
+  <strong>Invented at:</strong>
+  <%= @drug.invented_at %>
+</p>
+
+<p>
+  <strong>Market status:</strong>
+  <%= @drug.market_status %>
+</p>
+
+<%= link_to 'Edit', edit_drug_path(@drug) %> |
+<%= link_to 'Back', drugs_path %>

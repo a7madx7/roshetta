@@ -1,0 +1,2 @@
+class RxItem < ApplicationRecord
+end

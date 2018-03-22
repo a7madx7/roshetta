@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :drugs
   devise_for :users
   get 'welcome/home'
 
