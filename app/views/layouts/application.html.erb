@@ -7,13 +7,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="container">
-    <%= yield %>
+  <body>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
   
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <%- if Rails.env.development? %>
-    <%= debug params %>
-  <% end %>
+   <%- if false %>
+    <%= render 'layouts/card.html.erb', card_title: 'Params', card_header: 'DEBUG', card_text: debug(params), background: 'bg-warning' %>
+  <% end %> 
 </html>
