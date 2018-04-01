@@ -17,3 +17,22 @@
 //= require chartkick
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function () {
+  
+  var txtClock = $('#clock');
+
+  
+  function updateTime(){
+    var time = new Date();
+    var hours = time.getHours();
+    var minutes = time.getMinutes();
+    var seconds = time.getSeconds();
+
+    txtClock.html(hours + ' : ' + minutes + ' : ' + seconds);
+  }
+
+  setInterval(updateTime, 1000);
+  updateTime();
+});
+

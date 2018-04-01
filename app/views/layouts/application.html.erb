@@ -32,10 +32,7 @@
             </nav>
           </aside>
           <div id="morphsearch" class="morphsearch">
-            <form class="morphsearch-form">
-              <input class="morphsearch-input" type="search" placeholder="Search..." />
-              <button class="morphsearch-submit" type="submit">Search</button>
-            </form>
+            <%= render 'layouts/search' %>
             <div class="morphsearch-content">
              
               <div class="dummy-column">
@@ -148,10 +145,10 @@
           <!-- /morphsearch -->
           <header class="codrops-header">
             <h1>
-              <%= link_to root_path do %>
+              <%= link_to root_path, id: 'logo' do %>
                 Roshe<strong>tt</strong>a
               <% end %>
-              <span>Welcome to the era of digital prescriptions.</span>
+              <span id="">Welcome to the era of digital prescriptions.</span>
             </h1>
           </header>
           <div class="overlay"></div>

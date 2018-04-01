@@ -7,11 +7,8 @@
   
   <h2><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></h2>
 
-  <%= render 'layouts/card.html.erb', card_title: 'Rx', card_header: 'Column Names', card_text: model_column_names(Rx) %>
+  <%= render 'layouts/card.html.erb', card_title: 'Rx', card_header: 'Column Names', card_text: model_column_names(Rx), card_footer: '' %>
   
-    <%= link_to 'New Rx', new_rx_path %>
-
-<%= pie_chart [['Eva Pharma', 10], ['Amrya', 5], ['Farco', 15]], download: true %>
-
+  <%= link_to 'New Rx', new_rx_path %>
 
 </div>

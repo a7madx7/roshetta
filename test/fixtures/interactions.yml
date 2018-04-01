@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_drug: 1
+  second_drug: 1
+  title: MyString
+  description: MyText
+  level: MyString
+  is_deadly: false
+  avoid_by: MyString
+
+two:
+  first_drug: 1
+  second_drug: 1
+  title: MyString
+  description: MyText
+  level: MyString
+  is_deadly: false
+  avoid_by: MyString

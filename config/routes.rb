@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'search/for'
+
+  get 'search/drugs'
+
+  get 'search/rxes'
+
   get 'category/new'
 
   get 'category/create'
