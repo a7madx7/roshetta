@@ -5,6 +5,11 @@ class DrugsController < ApplicationController
   # GET /drugs.json
   def index
     @drugs = Drug.all
+
+    respond_to do |format|
+      format.html { }
+      format.json { }
+    end
   end
 
   # GET /drugs/1

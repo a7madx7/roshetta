@@ -1,0 +1,21 @@
+<h1>Companies</h1>
+<br>
+<%= companies_by_market_share_bar %>
+
+<%= companies_by_market_value_column %>
+<br>
+<div class="card-columns">
+<%- @companies.each do |company| %>
+  <div class="card border-primary bg-dark">
+    <div class="card-header text-primary"><%= company.name %></div>
+    <div class="card-body text-info">
+      Some company description goes here
+    </div>
+    <div class="card-footer text-primary">Created <%= time_ago_in_words(company.created_at) %> ago</div>
+  </div>
+  <br>
+<% end %>
+</div>
+<div class="centered">
+  <%= will_paginate @companies %>
+</div>

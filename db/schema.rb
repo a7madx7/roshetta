@@ -10,7 +10,97 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180321004639) do
+ActiveRecord::Schema.define(version: 20180329011524) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.integer "parent_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.decimal "reputation"
+    t.integer "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_companies_on_country_id"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.string "code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "diagnoses", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "drug_categories", force: :cascade do |t|
+    t.integer "drug_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_drug_categories_on_category_id"
+    t.index ["drug_id"], name: "index_drug_categories_on_drug_id"
+  end
+
+  create_table "drug_generics", force: :cascade do |t|
+    t.integer "drug_id"
+    t.integer "generic_id"
+    t.integer "unit_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "concentration"
+    t.index ["drug_id"], name: "index_drug_generics_on_drug_id"
+    t.index [nil], name: "index_drug_generics_on_category_id"
+  end
+
+  create_table "drugs", force: :cascade do |t|
+    t.string "name"
+    t.decimal "price"
+    t.integer "company_id"
+    t.integer "country_id"
+    t.integer "form_id"
+    t.boolean "market_available", default: true
+    t.text "professional_comment"
+    t.text "Please share your professional comment about this drug with us."
+    t.datetime "invented_at", default: "2008-03-31 22:12:31"
+    t.string "market_status", default: "patent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "forms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "generics", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rx_items", force: :cascade do |t|
+    t.integer "drug_id"
+    t.integer "rx_id"
+    t.decimal "quantity"
+    t.decimal "concentration"
+    t.string "duration"
+    t.string "unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["drug_id"], name: "index_rx_items_on_drug_id"
+    t.index ["rx_id"], name: "index_rx_items_on_rx_id"
+  end
 
   create_table "rxes", force: :cascade do |t|
     t.datetime "expires_at"
@@ -32,6 +122,12 @@ ActiveRecord::Schema.define(version: 20180321004639) do
     t.datetime "updated_at", null: false
     t.index ["issuer_id"], name: "index_rxes_on_issuer_id"
     t.index ["patient_id"], name: "index_rxes_on_patient_id"
+  end
+
+  create_table "units", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

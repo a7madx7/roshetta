@@ -1,6 +1,6 @@
 class RxesController < ApplicationController
   before_action :set_rx, only: [:show, :edit, :update, :destroy]
- 
+
   # GET /rxes
   # GET /rxes.json
   def index
@@ -10,6 +10,18 @@ class RxesController < ApplicationController
   # GET /rxes/1
   # GET /rxes/1.json
   def show
+    require 'rqrcode'
+    qr = RQRCode::QRCode.new(rx_url(@rx))
+    png = qr.as_png(
+          resize_gte_to: false,
+          resize_exactly_to: false,
+          fill: 'grey',
+          color: 'black',
+          size: 120,
+          border_modules: 4,
+          module_px_size: 6,
+          file: "#{Rails.root}/app/assets/images/rx_code.png"
+          )
   end
 
   # GET /rxes/new

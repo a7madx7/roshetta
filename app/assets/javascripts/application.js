@@ -8,13 +8,12 @@
 // compiled file. JavaScript code in this file should be added after the last require_* statement.
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
-// about supported directives.
-//= require vue
-//= require vue-router
-//= require vue-resource
+// about supported directives
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
 //= require rails-ujs
+//= require highcharts
+//= require chartkick
 //= require turbolinks
 //= require_tree .

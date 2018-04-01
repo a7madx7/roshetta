@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'company/index'
+
+  get 'company/new'
+
+  get 'company/create'
+
+  get 'company/edit'
+
+  get 'company/update'
+
+  get 'company/destroy'
+
   resources :drugs
   devise_for :users
   get 'welcome/home'
