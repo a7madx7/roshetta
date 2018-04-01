@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'category/new'
+
+  get 'category/create'
+
+  get 'category/index'
+
+  get 'category/edit'
+
+  get 'category/update'
+
+  get 'category/destroy'
+
   get 'company/index'
 
   get 'company/new'
