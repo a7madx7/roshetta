@@ -1,13 +1,17 @@
-<%- if @results[:type] %>
-  <p class="search-result">
-    <%= @results[:type] %>  search
-  </p>
-<% end %>
-<%- if @results[:data] %>
-  <% @results[:data].each do |result| %>
-    <div class="search-result">
-      <%= link_to result[:name].upcase, drug_path(result) %>
-      <br>
-    </div>
+<%- if @results %>
+  <%- if @results[:type] %>
+    <p class="search-result">
+      <%= @results[:type] %>  search
+    </p>
   <% end %>
+  <%- if @results[:data] %>
+    <% @results[:data].each do |result| %>
+      <div class="search-result">
+        <%= link_to result[:name].upcase, drug_path(result) %>
+        <br>
+      </div>
+    <% end %>
+  <% end %>
+<%- else %>
+  <div class="no-result">Your search returned no results</div>
 <% end %>

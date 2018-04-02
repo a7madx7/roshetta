@@ -1,15 +1,17 @@
 class SearchController < ApplicationController
+  before_action :set_term
   def for
-    @term = params[:term]
     if @term.start_with?('#')
       @results = { data: Rx.where(id: @term.tr('#', '')).first, type: 'Prescription' }
-    else
-      @results = { data: Drug.where('name like ?', "%#{@term}%").first(33), type: 'Drug' }
+    elsif @term.start_with?('@')
+      @results = { data: Drug.name_like(@term.tr('@', '')).first(10), type: 'Drug'}
+    elsif @term.start_with?('$')
+      @results = { data: Generic.name_like(@term.tr('$', '')).first(10), type: 'Generic' }
     end
 
     respond_to do |format|
       format.html { }
-      format.json { }
+      format.json { render json: @results }
     end 
   end
 
@@ -18,4 +20,10 @@ class SearchController < ApplicationController
 
   def rxes
   end
+
+  private
+
+    def set_term
+      @term = params[:term]
+    end
 end

@@ -13,6 +13,8 @@ class Drug < ApplicationRecord
    belongs_to :company
    belongs_to :form
 
+   scope :popular, -> { order(:visit_count, :desc) }
+   
    def to_s
     "{ name: #{name}, company: #{company.name}, country: #{country.name}}"
    end

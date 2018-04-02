@@ -1,5 +1,6 @@
 class DrugsController < ApplicationController
   before_action :set_drug, only: [:show, :edit, :update, :destroy]
+  after_action :update_visit_count, only: [:show]
 
   # GET /drugs
   # GET /drugs.json
@@ -75,5 +76,10 @@ class DrugsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def drug_params
       params.require(:drug).permit(:name, :price, :company, :market_available, :professional_comment, :invented_at, :market_status)
+    end
+
+    def update_visit_count
+      @drug.visit_count += 1
+      @drug.save
     end
 end

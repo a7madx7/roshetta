@@ -51,27 +51,49 @@ ready = function() {
       // ev.preventDefault();
     });
 
-    $target = $("input.morphsearch-input");
+  $target = $("input.morphsearch-input");
 
-    $target.on("input", function() {
-      $.ajax({
-        url: "/search/for",
-        type: "get",
-        data: {
-          term: $target.val()
-        },
-        dataType: "json",
-        success: function() {
-          alert("Ajax succeeded");
-        },
-        error: function() {
-          alert("Ajax failed");
-        }
-      });
+  $target.on("input", function() {
+    $.ajax({
+      url: "/search/for",
+      type: "get",
+      data: {
+        term: $target.val()
+      },
+      dataType: "json",
+      success: function(data) {
+        // clear the search area
+        purge_search_area(1);
+
+        // update the search results
+        $.each(data.data, function(i, searchItem) {
+          let result = "<a class='dummy-media-object' href='";
+          result += "http://roshetta.com/drugs/";
+          result += searchItem.id;
+          result += "'> <img src=''></img><h3>";
+          result += searchItem.name.toUpperCase();
+          result += "</h3></a>";
+          $(result).appendTo($searchItems);
+        });
+      },
+      error: function() {}
     });
+  });
 };
+
+function purge_search_area(code){
+  // update the views here
+  //  get the search content div
+  let $searchContent = $(".morphsearch-content");
+  // get the drugs search results column
+  let $searchItems = $searchContent
+    .children(
+      ".dummy-column"
+    )
+    .eq(code);
+  $searchItems.html("");
+}
 
 $(document).ready(ready);
 $(document).on("page:load", ready);
 $(document).on("page:change", ready);
-

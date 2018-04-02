@@ -69,9 +69,8 @@ ActiveRecord::Schema.define(version: 20180401005529) do
     t.integer "country_id"
     t.integer "form_id"
     t.boolean "market_available", default: true
-    t.text "professional_comment"
-    t.text "Please share your professional comment about this drug with us."
-    t.datetime "invented_at", default: "2008-03-31 22:12:31"
+    t.text "professional_comment", default: "Please share your professional comment about this drug with us."
+    t.datetime "invented_at", default: "2008-04-01 22:11:21"
     t.string "market_status", default: "patent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

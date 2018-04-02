@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'generics/new'
+
+  get 'generics/create'
+
+  get 'generics/index'
+
+  get 'generics/update'
+
+  get 'generics/edit'
+
+  get 'generics/destroy'
+
   get 'search/for'
 
   get 'search/drugs'

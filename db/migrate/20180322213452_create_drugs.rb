@@ -8,7 +8,7 @@ class CreateDrugs < ActiveRecord::Migration[5.1]
       t.integer :form_id
       
       t.boolean :market_available, default: true
-      t.text :professional_comment, 'Please share your professional comment about this drug with us.'
+      t.text :professional_comment, default: 'Please share your professional comment about this drug with us.'
       t.datetime :invented_at, default: 10.years.ago
       t.string :market_status, default: 'patent'
 
