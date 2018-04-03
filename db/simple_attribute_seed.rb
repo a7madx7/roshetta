@@ -59,7 +59,14 @@ end
 def user_seed
   puts 'Started seeding users...'
  begin
-   User.create!(password: '123testing', password_confirmation: '123testing', email: 'ahmad.hamdi.emara@gmail.com')
+   profile = Profile.create!(
+     mobile_phone: '00201140404660',
+     address: 'Alexandria, Egypt',
+     profession: 'Pharmacist',
+     user_id: 1,
+     reputation: 0
+   )
+   User.create!(password: '123testing', password_confirmation: '123testing', email: 'ahmad.hamdi.emara@gmail.com', profile: profile)
 
   #  User.create!(username: 'aug', password: '123testing', password_confirmation: '123testing', email: 'aug@gmail.com',
   #                       country_id: 70, first_name: 'Ahmad', last_name: 'El Gewaily', profession: 'Pharmacist', gender: 'male')

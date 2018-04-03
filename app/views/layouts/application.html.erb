@@ -6,7 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <%= favicon_link_tag 'rx' %>
   </head>
 
   <body>
@@ -34,7 +34,6 @@
           <div id="morphsearch" class="morphsearch">
             <%= render 'layouts/search' %>
             <div class="morphsearch-content">
-             
               <div class="dummy-column">
                 <h2>Rxes</h2>
                 <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/08/05/page-preloading-effect/">
@@ -76,68 +75,6 @@
                     <h3>Draggable Dual-View Slideshow</h3>
                 </a>
               </div>
-              <div class="dummy-column">
-                <h2>Drugs</h2>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/10/07/tooltip-styles-inspiration/">
-                  <%= image_tag 'TooltipStylesInspiration.png' %>
-    
-                    <h3>Tooltip Styles Inspiration</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/09/23/animated-background-headers/">
-                  <%= image_tag 'AnimatedHeaderBackgrounds.png' %>
-                    <h3>Animated Background Headers</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/09/16/off-canvas-menu-effects/">
-                  <img src="img/thumbs/OffCanvas.png" alt="OffCanvas" />
-                  <h3>Off-Canvas Menu Effects</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/09/02/tab-styles-inspiration/">
-                  <img src="img/thumbs/TabStyles.png" alt="TabStyles" />
-                  <h3>Tab Styles Inspiration</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/">
-                  <img src="img/thumbs/ResponsiveSVGs.png" alt="ResponsiveSVGs" />
-                  <h3>Make SVGs Responsive with CSS</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/07/23/notification-styles-inspiration/">
-                  <img src="img/thumbs/NotificationStyles.png" alt="NotificationStyles" />
-                  <h3>Notification Styles Inspiration</h3>
-                </a>
-              </div>
-
-               <div class="dummy-column">
-                <h2>Top doctors</h2>
-                <a class="dummy-media-object" href="http://twitter.com/SaraSoueidan">
-                  <img class="round" src="http://0.gravatar.com/avatar/81b58502541f9445253f30497e53c280?s=50&d=identicon&r=G" alt="Sara Soueidan"
-                  />
-                  <h3>Sara Soueidan</h3>
-                </a>
-                <a class="dummy-media-object" href="http://twitter.com/rachsmithtweets">
-                  <img class="round" src="http://0.gravatar.com/avatar/48959f453dffdb6236f4b33eb8e9f4b7?s=50&d=identicon&r=G" alt="Rachel Smith"
-                  />
-                  <h3>Rachel Smith</h3>
-                </a>
-                <a class="dummy-media-object" href="http://www.twitter.com/peterfinlan">
-                  <img class="round" src="http://0.gravatar.com/avatar/06458359cb9e370d7c15bf6329e5facb?s=50&d=identicon&r=G" alt="Peter Finlan"
-                  />
-                  <h3>Peter Finlan</h3>
-                </a>
-                <a class="dummy-media-object" href="http://www.twitter.com/pcridesagain">
-                  <img class="round" src="http://1.gravatar.com/avatar/db7700c89ae12f7d98827642b30c879f?s=50&d=identicon&r=G" alt="Patrick Cox"
-                  />
-                  <h3>Patrick Cox</h3>
-                </a>
-                <a class="dummy-media-object" href="https://twitter.com/twholman">
-                  <img class="round" src="http://0.gravatar.com/avatar/cb947f0ebdde8d0f973741b366a51ed6?s=50&d=identicon&r=G" alt="Tim Holman"
-                  />
-                  <h3>Tim Holman</h3>
-                </a>
-                <a class="dummy-media-object" href="https://twitter.com/shaund0na">
-                  <img class="round" src="http://1.gravatar.com/avatar/9bc7250110c667cd35c0826059b81b75?s=50&d=identicon&r=G" alt="Shaun Dona"
-                  />
-                  <h3>Shaun Dona</h3>
-                </a>
-              </div>
             </div>
             <!-- /morphsearch-content -->
             <span class="morphsearch-close"></span>
@@ -146,21 +83,29 @@
           <header class="codrops-header">
             <h1>
               <%= link_to root_path, id: 'logo' do %>
-                Roshe<strong>tt</strong>a
+                <big>R</big>oshetta
               <% end %>
-              <span id="">Welcome to the era of digital prescriptions.</span>
             </h1>
+            <br />
+            <h6>
+            <span class="text-muted" id="">Welcome to the era of digital prescriptions. 
+              <%- if user_signed_in? %>
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete%>
+              <% end %>
+              </span>
+            </h6>
           </header>
           <div class="overlay"></div>
         </div>
         </div>
        <div class="row">
-        <main class="main container">
-              <%= yield %>
+          <main class="main container">
+                <%= yield %>
           </main>
+          <%= render 'layouts/footer' %>
        </div>
+      <%- if false %>
+        <%= render 'layouts/card.html.erb', card_title: 'Params', card_header: 'DEBUG', card_text: debug(params), background: 'bg-warning' %>
+      <% end %>  
   </body>
-   <%- if false %>
-    <%= render 'layouts/card.html.erb', card_title: 'Params', card_header: 'DEBUG', card_text: debug(params), background: 'bg-warning' %>
-  <% end %> 
 </html>

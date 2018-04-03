@@ -3,4 +3,6 @@ class Company < ApplicationRecord
   
   belongs_to :country
   has_many :drugs
+
+  scope :popular, -> { order(:visit_count, :desc) }
 end

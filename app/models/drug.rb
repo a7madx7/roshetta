@@ -1,4 +1,5 @@
 class Drug < ApplicationRecord
+  # todo: add the ability to update the prices for a whole country by a factor.
   validates :name, presence: true, uniqueness: true, length: { minimum:2, maximum:256, too_short: 'Drug name needs to be more than 2 characters', too_long: 'Drug name can not be more than 256 characters in length' }
 
    validates :price, presence: true, numericality: { greater_than: 0.01, less_than: 10000000 }

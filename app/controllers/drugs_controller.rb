@@ -1,6 +1,7 @@
 class DrugsController < ApplicationController
   before_action :set_drug, only: [:show, :edit, :update, :destroy]
   after_action :update_visit_count, only: [:show]
+  after_action :update_image, only: [:show]
 
   # GET /drugs
   # GET /drugs.json
@@ -81,5 +82,16 @@ class DrugsController < ApplicationController
     def update_visit_count
       @drug.visit_count += 1
       @drug.save
+    end
+
+    def update_image
+       images_folder = Rails.root.to_s + '/app/assets/images/data/'
+       get_images_for(@drug.name, images_folder, 1, 'png')
+       
+       Dir.foreach(images_folder + "/#{@drug.name}/") do |file|
+          next if file == '.' or file == '..'
+          @drug.image = file
+       end
+       @drug.save
     end
 end

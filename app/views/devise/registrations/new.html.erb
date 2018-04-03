@@ -1,17 +1,28 @@
-<h2>Sign up</h2>
+<div class="text-center">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'horizontal form') do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'form-signin'} ) do |f| %>
   <%= f.error_notification %>
+  <h2>Sign up</h2>
+  <%= image_tag 'signup.png', class: 'mb-4', width: 72, height: 72, alt: 'Sign up' %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :email, label: false, placeholder: 'Your email', required: true, autofocus: true %>
+    <%= f.input :password, label: false, placeholder: 'Your password', required: true, hint: ("#{@minimum_password_length} Characters minimum!" if @minimum_password_length) %>
+    <%= f.input :password_confirmation, label: false, placeholder: 'Password confirmation', required: true %>
+    <div class="profile">
+      <%= f.fields_for :profile do |p| %>
+        <%= p.input :address, label: false, placeholder: 'Current address' %>
+      <% end %>
+    </div>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class: 'btn btn-lg btn-success btn-block' %>
   </div>
+  <%= render 'layouts/copyright' %>
+
+  <%= render "devise/shared/links" %>
+
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>

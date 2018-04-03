@@ -1,14 +1,16 @@
 @import "bootstrap";
+@import "font-awesome";
+@import 'login_form';
+@import 'footer';
+
 .centered {
     // border: 1px solid;
     height: 150px;
     width: 400px;
-    margin: 0;
-    // background: yellow;
+    margin: 0; // background: yellow;
     position: absolute;
     top: 300%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
 }
-

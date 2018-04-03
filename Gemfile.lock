@@ -97,10 +97,13 @@ GEM
       activesupport (>= 3.0.0)
     ffaker (2.8.1)
     ffi (1.9.23)
+    font-awesome-rails (4.7.0.3)
+      railties (>= 3.2, < 5.2)
     friendly_id (5.2.3)
       activerecord (>= 4.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hashie (3.5.7)
     hightop (0.2.0)
       activerecord
     i18n (0.9.5)
@@ -132,6 +135,9 @@ GEM
     nio4r (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    omniauth (1.8.1)
+      hashie (>= 3.4.6, < 3.6.0)
+      rack (>= 1.6.2, < 3)
     orm_adapter (0.5.0)
     popper_js (1.12.9)
     public_suffix (3.0.2)
@@ -249,11 +255,13 @@ DEPENDENCIES
   devise
   factory_bot
   ffaker
+  font-awesome-rails
   friendly_id
   hightop
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  omniauth
   puma (~> 3.7)
   rails (~> 5.1.5)
   rqrcode
