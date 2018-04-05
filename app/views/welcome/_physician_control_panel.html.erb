@@ -1,0 +1,73 @@
+<h2 class="text-center control-panel-header">Physician control panel</h2>
+<div class="card-group">
+  <div class="card">
+    <div class="card-header">Issue a Rx</div>
+    <div class="card-body">
+      <%= link_to new_rx_path  do %>
+        <i class="fas fa-plus"></i>
+        Issue a Rx using Social ID Number as password
+      <% end %>
+      <br />
+      <%= link_to new_rx_path  do %>
+        <i class="fas fa-plus"></i>
+        Issue a Rx using my general password
+      <% end %>
+      <br />
+      <%= link_to new_rx_path  do %>
+        <i class="fas fa-plus"></i>
+        Issue a Rx using a new custom password
+      <% end %>
+      <br />
+      <%= link_to new_rx_path  do %>
+        <i class="fas fa-flask"></i>
+        Issue a generic formulation
+      <% end %>
+    </div>
+    <div class="card-footer"><%= Time.now.to_date %></div>
+  </div>
+  <div class="card">
+    <div class="card-header">Statistics</div>
+    <div class="card-body">
+      <%= link_to new_rx_path  do %>
+        <i class="fas fa-chart-pie"></i>
+        My own statistics as a doctor
+      <% end %>
+      <br />
+      <%= link_to new_rx_path  do %>
+        <i class="fas fa-chart-bar"></i>
+        My patients' statistics
+      <% end %>
+      <br />
+      <%= link_to new_rx_path  do %>
+        <i class="fas fa-chart-line"></i>
+        Market statistics
+      <% end %>
+      <br />
+      <%= link_to new_rx_path  do %>
+        <i class="fas fa-chart-area"></i>
+        Drug statistics
+      <% end %>
+    </div>
+    <div class="card-footer"><%= Time.now.to_date %></div>
+  </div>
+  <div class="card">
+    <div class="card-header">Challenge</div>
+     <div class="card-body">
+      <%= link_to new_rx_path  do %>
+        <i class="fas fa-question-circle"></i>
+        Get a random question.
+      <% end %>
+      <br />
+      <%= link_to new_rx_path  do %>
+        <i class="fas fa-edit"></i>
+        Add a question to the question bank.
+      <% end %>
+      <br />
+      <%= link_to new_rx_path  do %>
+        <i class="fab fa-linux"></i>
+        Challenge someone and earn points
+      <% end %>
+    </div>
+    <div class="card-footer"><%= Time.now.to_date %></div>
+  </div>
+</div>
