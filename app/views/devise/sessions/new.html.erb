@@ -5,7 +5,7 @@
 <%= image_tag 'login.png', class: 'mb-4', width: 72, height: 72, alt: 'Login' %>
   <div class="form-inputs">
     <%= f.input :email, label: false, placeholder: 'Email, Username or Phone', required: true, autofocus: true %>
-    <%= f.input :password, label: false, required: true, error: 'Password is mandatory' %>
+    <%= f.input :password, label: false, placeholder: 'Password' , required: true, error: 'Password is mandatory' %>
     <%- if devise_mapping.rememberable? %>
       <div class="checkbox"><input value="0" type="hidden" name="user[remember_me]">
         <label class="pretty boolean optional" for="user_remember_me">Remember me?

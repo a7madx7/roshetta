@@ -24,6 +24,7 @@ $(document).ready(function () {
 
   
   function updateTime(){
+    return false;
     var time = new Date();
     var hours = time.getHours();
     var minutes = time.getMinutes();

@@ -1,111 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Roshetta</title>
     <%= csrf_meta_tags %>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%= render 'layouts/material_css' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag 'rx' %>
+
+    <%= render 'layouts/material_js' %>
   </head>
 
   <body>
-    <%= stylesheet_link_tag 'demo' %>
-    <%= stylesheet_link_tag 'component' %>
-    
-        <div class="row">
-        <div class="">
-          <aside class="sidebar clearfix">
-            <nav>
-              <a href="#">
-                <i class="fa fa-fw fa-comments-o"></i>
-              </a>
-              <a href="#">
-                <i class="fa fa-fw fa-heart-o"></i>
-              </a>
-              <a href="#">
-                <i class="fa fa-fw fa-send-o"></i>
-              </a>
-              <a href="#">
-                <i class="fa fa-fw fa-smile-o"></i>
-              </a>
-            </nav>
-          </aside>
-          <div id="morphsearch" class="morphsearch">
-            <%= render 'layouts/search' %>
-            <div class="morphsearch-content">
-              <div class="dummy-column">
-                <h2>Rxes</h2>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/08/05/page-preloading-effect/">
-    
-                  <%= image_tag 'PagePreloadingEffect.png' %>
-    
-    
-                    <h3>Page Preloading Effect</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/05/28/arrow-navigation-styles/">
-    
-                  <%= image_tag 'ArrowNavigationStyles.png' %>
-    
-                    <h3>Arrow Navigation Styles</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/06/19/ideas-for-subtle-hover-effects/">
-    
-                  <%= image_tag 'HoverEffectsIdeasNew.png' %>
-    
-    
-                    <h3>Ideas for Subtle Hover Effects</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/07/14/freebie-halcyon-days-one-page-website-template/">
-    
-                  <%= image_tag 'FreebieHalcyonDays.png' %>
-    
-                    <h3>Halcyon Days Template</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/05/22/inspiration-for-article-intro-effects/">
-    
-                  <%= image_tag 'ArticleIntroEffects.png' %>
-    
-                    <h3>Inspiration for Article Intro Effects</h3>
-                </a>
-                <a class="dummy-media-object" href="http://tympanus.net/codrops/2014/06/26/draggable-dual-view-slideshow/">
-    
-                  <%= image_tag 'DraggableDualViewSlideshow.png' %>
-    
-                    <h3>Draggable Dual-View Slideshow</h3>
-                </a>
-              </div>
-            </div>
-            <!-- /morphsearch-content -->
-            <span class="morphsearch-close"></span>
+    <div class="row">
+      <div class="">
+        <aside class="sidebar clearfix">
+          <nav>
+            <a href="#">
+              <i class="fas fa-prescription-bottle"></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-heartbeat"></i>
+            </a>
+            <a href="#">
+              <i class="fas fa-question"></i>
+            </a>
+          </nav>
+        </aside>
+        <div id="morphsearch" class="morphsearch">
+          <%= render 'layouts/search' %>
+          <div class="morphsearch-content">
+            <hr />
+            <p class="text-muted hint">Use <i class="fas fa-hashtag"></i> at the start of your search term to dispense prescriptions <i class="far fa-smile"></i></p>
+            <p class="text-muted hint">Use <i class="fas fa-dollar-sign"></i> at the start of your search term to search for generics <i class="far fa-smile"></i></p>
+            <p class="text-muted hint">Use <i class="fas fa-at"></i> at the start of your search term to search for commercial drugs <i class="far fa-smile"></i></p>
           </div>
-          <!-- /morphsearch -->
-          <header class="codrops-header">
-            <h1>
-              <%= link_to root_path, id: 'logo' do %>
-                <big>R</big>oshetta
-              <% end %>
-            </h1>
-            <br />
-            <h6>
-            <span class="text-muted" id="">Welcome to the era of digital prescriptions. 
-              <%- if user_signed_in? %>
-                <%= link_to 'Sign out', destroy_user_session_path, method: :delete%>
-              <% end %>
-              </span>
-            </h6>
-          </header>
-          <div class="overlay"></div>
+          <!-- /morphsearch-content -->
+          <span class="morphsearch-close"></span>
         </div>
+        <!-- /morphsearch -->
+        <header class="codrops-header">
+          <h1>
+            <%= link_to root_path, id: 'logo' do %>
+              <big>R</big>oshetta
+            <% end %>
+          </h1>
+          <br />
+          <h6>
+          <span class="text-muted" id="">Welcome to the era of digital prescriptions. 
+            <%- if user_signed_in? %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                Sign out
+                <i class="fas fa-sign-out-alt"></i>
+              <% end %>
+            <% end %>
+            </span>
+          </h6>
+        </header>
+        <div class="overlay">
         </div>
-       <div class="row">
-          <main class="main container">
-                <%= yield %>
-          </main>
-          <%= render 'layouts/footer' %>
-       </div>
-      <%- if false %>
-        <%= render 'layouts/card.html.erb', card_title: 'Params', card_header: 'DEBUG', card_text: debug(params), background: 'bg-warning' %>
-      <% end %>  
+      </div>
+    </div>
+    <div class="row">
+      <main class="main container">
+        <%= yield %>
+      </main>
+      <%= render 'layouts/footer' %>
+    </div>
+    <%- if false %>
+      <%= render 'layouts/card.html.erb', card_title: 'Params', card_header: 'DEBUG', card_text: debug(params), background: 'bg-warning' %>
+    <% end %>  
   </body>
 </html>

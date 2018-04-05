@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180403062715) do
+ActiveRecord::Schema.define(version: 20180404132250) do
 
   create_table "badges", force: :cascade do |t|
     t.string "image"
-    t.integer "user_id"
+    t.integer "profile_id"
     t.string "condition"
     t.string "score"
     t.string "name"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_badges_on_user_id"
+    t.index ["profile_id"], name: "index_badges_on_profile_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20180403062715) do
     t.integer "form_id"
     t.boolean "market_available", default: true
     t.text "professional_comment", default: "Please share your professional comment about this drug with us."
-    t.datetime "invented_at", default: "2008-04-01 22:11:21"
+    t.datetime "invented_at", default: "2008-04-04 05:19:24"
     t.string "market_status", default: "patent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20180403062715) do
     t.datetime "updated_at", null: false
     t.boolean "verified", default: false, null: false
     t.decimal "reputation"
+    t.string "speciality", default: "GP", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -191,12 +192,9 @@ ActiveRecord::Schema.define(version: 20180403062715) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "username"
-    t.string "type"
-    t.boolean "verified"
-    t.decimal "reputation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.integer "profile_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["profile_id"], name: "index_users_on_profile_id"

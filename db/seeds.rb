@@ -1,3 +1,4 @@
+# rails db:drop && rails db:migrate && rails db:seed
 require_relative 'seed_constants.rb'
 require_relative 'db_readers.rb'
 require_relative 'company_seed.rb'

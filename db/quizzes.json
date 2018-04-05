@@ -1,0 +1,20 @@
+{
+  "questions": [
+    {
+      "title": "The title for the question",
+      "content": "The question itself in details",
+      "image": "direct link to quiz image to be displayed on the quiz http://www.something/j.png",
+      "answers": ["a value here", "b value here", "c value here", "d value here"],
+      "correct_answer": "correct answer value here",
+      "explanation_after_solving": "Some explanation that will be shown to the user after solvin",
+      "categories": ["first", "second", "third and so on"]
+    },
+    {
+
+    },
+    {
+
+    }
+  ],
+  "author": "Ahmad Usama El Gewaily"
+}

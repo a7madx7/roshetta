@@ -62,19 +62,22 @@ ready = function() {
       },
       dataType: "json",
       success: function(data) {
-        // update the views here
+        if( data.data != undefined ) {
+            // update the views here
         //  get the search content div
         let $searchContent = $(".morphsearch-content");
         // get the drugs search results column
+        let dummy_column = '<div class="dummy-column"></div>';
+        $searchContent.html('');
+        $(dummy_column).appendTo($searchContent);
         let $searchItems = $searchContent.children(".dummy-column");
-        $searchItems.html("");
         let header = '<h2>' + data.type + 's</h2>';
         $(header).appendTo($searchItems);
         // update the search results
         $.each(data.data, function(i, searchItem) {
           let img = "img.png";
           let result = "<a class='dummy-media-object' href='";
-          result += "http://roshetta.com/drugs/";
+          result += "/drugs/";
           result += searchItem.id;
           result += "'> <img src='";
           result += img;
@@ -82,7 +85,8 @@ ready = function() {
           result += searchItem.name.toUpperCase();
           result += "</h3></a>";
           $(result).appendTo($searchItems);
-        });
+          });
+        }
       },
       error: function() {}
     });

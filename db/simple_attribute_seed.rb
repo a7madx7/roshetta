@@ -3,7 +3,7 @@ def form_seed
   begin
     ['amp', 'vial',
      'cap', 'tab', 'enteric coated tab', 'film coated tab', 'lozenges' , 'chew. tab', 'caplet', 'pilules', 'powder',
-     'susp', 'emulsion', 'spray', 'syrup', 'tincture', 'decoction', 'infusion', 'bottle', 'elixir',
+     'susp', 'emulsion', 'syrup', 'tincture', 'decoction', 'infusion', 'bottle', 'elixir',
      'lotion','oil', 'serum', 'shampoo', 'lip stick', 'roll on',
      'granules', 'eff. granules', 'eff. tab',
      'spray', 'topical spray', 'neb. susp', 'oral spray',
@@ -59,15 +59,18 @@ end
 def user_seed
   puts 'Started seeding users...'
  begin
-   profile = Profile.create!(
+   profile = Profile.new(
      mobile_phone: '00201140404660',
      address: 'Alexandria, Egypt',
      profession: 'Pharmacist',
      user_id: 1,
      reputation: 0
    )
-   User.create!(password: '123testing', password_confirmation: '123testing', email: 'ahmad.hamdi.emara@gmail.com', profile: profile)
+   user = User.new(password: '123testing', password_confirmation: '123testing', email: 'ahmad.hamdi.emara@gmail.com').tap do |u|
+      u.profile = profile
+   end
 
+   user.save
   #  User.create!(username: 'aug', password: '123testing', password_confirmation: '123testing', email: 'aug@gmail.com',
   #                       country_id: 70, first_name: 'Ahmad', last_name: 'El Gewaily', profession: 'Pharmacist', gender: 'male')
   #  User.create!(username: 'guest', password: '123testing', password_confirmation: '123testing', email: 'guest@gmail.com',

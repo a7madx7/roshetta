@@ -9,7 +9,7 @@
   <div class="card border-primary bg-dark">
     <div class="card-header text-primary"><%= company.name %></div>
     <div class="card-body text-info">
-      Some company description goes here
+      <%= "#{company.name.downcase.capitalize} has #{company.drugs.count} drugs in the market." %>
     </div>
     <div class="card-footer text-primary">Created <%= time_ago_in_words(company.created_at) %> ago</div>
   </div>
