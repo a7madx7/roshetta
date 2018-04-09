@@ -44,13 +44,6 @@ ready = function() {
     }
   });
 
-  /***** for demo purposes only: don't allow to submit the form *****/
-  morphSearch
-    .querySelector('button[type="submit"]')
-    .addEventListener("click", function(ev) {
-      // ev.preventDefault();
-    });
-
   $target = $("input.morphsearch-input");
 
   $target.on("input", function() {
@@ -75,22 +68,33 @@ ready = function() {
         $(header).appendTo($searchItems);
         // update the search results
         $.each(data.data, function(i, searchItem) {
-          let img = "img.png";
-          let result = "<a class='dummy-media-object' href='";
-          result += "/drugs/";
-          result += searchItem.id;
-          result += "'> <img src='";
-          result += img;
-          result += "'></img><h3>";
-          result += searchItem.name.toUpperCase();
-          result += "</h3></a>";
-          $(result).appendTo($searchItems);
+            let result = "<a class='dummy-media-object' href='";
+            result += "/drugs/";
+            result += searchItem.id;
+            result += 'data-description="' + searchItem.description + '"';
+            result += "'>";
+            result += '';
+            result += "<h3>";
+            result += searchItem.name.toUpperCase();
+            result += "</h3></a>";
+            $(result).appendTo($searchItems);
           });
         }
       },
       error: function() {}
     });
   });
+
+    $('html').on('mouseover', '.dummy-media-object', function () {
+       if($('#description_column') == undefined){
+           let description = '<div>' + $(this).data('description') + '</div>';
+           let description_column = '<div class="dummy-column" id="description_column"></div>';
+           $(description_column).appendTo('.morphsearch');
+           $(description).appendTo('#description_column');
+       }else{
+           $('.')
+       }
+    });
 };
 
 $(document).ready(ready);

@@ -1,24 +1,24 @@
-@import "bootstrap";
 @import 'login_form';
 @import 'footer';
 @import 'demo';
 @import 'component';
+@import 'custom';
+@import 'datatables';
 @import 'welcome';
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import "materialize";
 
-* {
-    box-sizing: border-box;
+nav, nav a{
+  background-color: inherit;
+  border: none;
+  color: $primary-color;
 }
-
+.sidebar{
+  border: none;
+}
 .centered {
-    // border: 1px solid;
-    height: 150px;
-    width: 400px;
-    margin: 0; // background: yellow;
-    position: absolute;
-    top: 300%;
+    text-align: center;
     left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
 }
 
 .hint {

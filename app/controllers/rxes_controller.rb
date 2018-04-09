@@ -81,6 +81,6 @@ class RxesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def rx_params
-      params.require(:rx).permit(:expires_at, :total_value, :dispensed_count, :patient_id, :dispenser_id, :issuer_id, :short_diagnosis, :full_diagnosis, :allowed_dispense_count, :status, :visibility, :picture, :expired, :professional_comment, :starts_at)
+      params.require(:rx).permit(:expires_at, :total_value, :dispensed_count, :patient_id, :short_diagnosis, :full_diagnosis, :allowed_dispense_count, :status, :visibility, :picture, :expired, :professional_comment, :starts_at)
     end
 end

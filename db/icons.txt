@@ -26,3 +26,6 @@
 <i class="fab fa-linux"></i>
 <i class="fas fa-seedling"></i>
 <i class="far fa-lightbulb"></i>
+<i class="fab fa-twitter"></i>
+<i class="fab fa-linkedin-in"></i>
+<i class="fab fa-facebook-f"></i>

@@ -1,15 +1,6 @@
 Rails.application.routes.draw do
-  get 'generics/new'
-
-  get 'generics/create'
-
-  get 'generics/index'
-
-  get 'generics/update'
-
-  get 'generics/edit'
-
-  get 'generics/destroy'
+  resources :patients
+  resources :generics
 
   get 'search/for'
 
@@ -17,33 +8,15 @@ Rails.application.routes.draw do
 
   get 'search/rxes'
 
-  get 'category/new'
+  resources :categories
 
-  get 'category/create'
-
-  get 'category/index'
-
-  get 'category/edit'
-
-  get 'category/update'
-
-  get 'category/destroy'
-
-  get 'company/index'
-
-  get 'company/new'
-
-  get 'company/create'
-
-  get 'company/edit'
-
-  get 'company/update'
-
-  get 'company/destroy'
+  resources :companies
 
   resources :drugs
   devise_for :users
-  get 'welcome/home'
+  resources :profiles
+
+  get 'welcome/home', as: :home
 
   resources :rxes
   root 'welcome#home'

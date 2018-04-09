@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404132250) do
+ActiveRecord::Schema.define(version: 20180408211011) do
 
   create_table "badges", force: :cascade do |t|
     t.string "image"
@@ -121,6 +121,16 @@ ActiveRecord::Schema.define(version: 20180404132250) do
     t.index ["second_drug"], name: "index_interactions_on_second_drug"
   end
 
+  create_table "patients", force: :cascade do |t|
+    t.string "name"
+    t.string "social_security_id", null: false
+    t.integer "rx_id"
+    t.string "last_dispense_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rx_id"], name: "index_patients_on_rx_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "mobile_phone", null: false
     t.string "land_line"
@@ -135,6 +145,8 @@ ActiveRecord::Schema.define(version: 20180404132250) do
     t.boolean "verified", default: false, null: false
     t.decimal "reputation"
     t.string "speciality", default: "GP", null: false
+    t.string "theme"
+    t.string "preferred_charting_library"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  social_security_id: MyString
+  rx: one
+  last_dispense_ip: MyString
+
+two:
+  name: MyString
+  social_security_id: MyString
+  rx: two
+  last_dispense_ip: MyString

@@ -7,51 +7,70 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
-    <%= render 'layouts/material_css' %>
+    <%#= render 'layouts/material_css' %>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag 'rx' %>
 
-    <%= render 'layouts/material_js' %>
+    <%#= render 'layouts/material_js' %>
   </head>
 
   <body>
-    <div class="row">
-      <div class="">
-        <aside class="sidebar clearfix">
-          <nav>
-            <a href="#">
-              <i class="fas fa-prescription-bottle"></i>
-            </a>
-            <a href="#">
-              <i class="fas fa-heartbeat"></i>
-            </a>
-            <a href="#">
-              <i class="fas fa-question"></i>
-            </a>
-          </nav>
-        </aside>
-        <div id="morphsearch" class="morphsearch">
-          <%= render 'layouts/search' %>
-          <div class="morphsearch-content">
-            <hr />
-            <p class="text-muted hint">Use <i class="fas fa-hashtag"></i> at the start of your search term to dispense prescriptions <i class="far fa-smile"></i></p>
-            <p class="text-muted hint">Use <i class="fas fa-dollar-sign"></i> at the start of your search term to search for generics <i class="far fa-smile"></i></p>
-            <p class="text-muted hint">Use <i class="fas fa-at"></i> at the start of your search term to search for commercial drugs <i class="far fa-smile"></i></p>
-          </div>
-          <!-- /morphsearch-content -->
-          <span class="morphsearch-close"></span>
+    <div class="">
+      <aside class="sidebar clearfix">
+        <nav>
+          <%= link_to root_path do %>
+            <i class="fas fa-home"></i>
+          <% end %>
+          <%= link_to new_rx_path do %>
+            <i class="fas fa-prescription-bottle"></i>
+          <% end %>
+          <a href="#">
+            <i class="fas fa-heartbeat"></i>
+          </a>
+          <a href="#">
+            <i class="fas fa-question"></i>
+          </a>
+          <a href="#">
+            <i class="far fa-lightbulb"></i>
+          </a>
+          <a href="#">
+            <i class="fas fa-cog"></i>
+          </a>
+          <a href="#">
+            <i class="fas fa-capsules"></i>
+          </a>
+          <a href="#">
+            <i class="fas fa-flask"></i>
+          </a>
+          <a href="#">
+            <i class="fas fa-chart-pie"></i>
+          </a>
+        </nav>
+      </aside>
+      <div id="morphsearch" class="morphsearch">
+        <%= render 'layouts/search' %>
+        <div class="morphsearch-content">
+          <p class="text-muted hint">Use <i class="fas fa-hashtag"></i> at the start of your search term to dispense
+            prescriptions <i class="far fa-smile"></i></p>
+          <p class="text-muted hint">Use <i class="fas fa-dollar-sign"></i> at the start of your search term to search
+            for generics <i class="far fa-smile"></i></p>
+          <p class="text-muted hint">Use <i class="fas fa-at"></i> at the start of your search term to search for
+            commercial drugs <i class="far fa-smile"></i></p>
         </div>
-        <!-- /morphsearch -->
-        <header class="codrops-header">
-          <h1>
-            <%= link_to root_path, id: 'logo' do %>
-              <big>R</big>oshetta
-            <% end %>
-          </h1>
-          <br />
-          <h6>
-          <span class="text-muted" id="">Welcome to the era of digital prescriptions. 
+        <!-- /morphsearch-content -->
+        <span class="morphsearch-close"></span>
+      </div>
+      <!-- /morphsearch -->
+      <header class="codrops-header">
+        <h1>
+          <%= link_to root_path, id: 'logo' do %>
+            Roshetta
+          <% end %>
+        </h1>
+        <br/>
+        <h6>
+          <span class="text-muted" id="">Welcome to the era of digital prescriptions.
             <%- if user_signed_in? %>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 Sign out
@@ -59,18 +78,15 @@
               <% end %>
             <% end %>
             </span>
-          </h6>
-        </header>
-        <div class="overlay">
-        </div>
+        </h6>
+      </header>
+      <div class="overlay">
       </div>
     </div>
-    <div class="row">
-      <main class="main container">
-        <%= yield %>
-      </main>
-      <%= render 'layouts/footer' %>
-    </div>
+    <main class="main container">
+      <%= yield %>
+    </main>
+    <%= render 'layouts/footer' %>
     <%- if false %>
       <%= render 'layouts/card.html.erb', card_title: 'Params', card_header: 'DEBUG', card_text: debug(params), background: 'bg-warning' %>
     <% end %>  

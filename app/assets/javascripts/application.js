@@ -15,7 +15,8 @@
 //= require rails-ujs
 //= require highcharts
 //= require chartkick
-//= require turbolinks
+//= require bootstrap
+//= require materialize
 //= require_tree .
 
 $(document).ready(function () {
@@ -35,5 +36,6 @@ $(document).ready(function () {
 
   setInterval(updateTime, 1000);
   updateTime();
+
 });
 

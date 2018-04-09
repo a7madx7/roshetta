@@ -88,7 +88,7 @@ class DrugsController < ApplicationController
        images_folder = Rails.root.to_s + '/app/assets/images/data/'
        get_images_for(@drug.name, images_folder, 1, 'png')
        
-       Dir.foreach(images_folder + "#{@drug.name}/") do |file|
+       Dir.foreach(images_folder + 'downloads/' + "#{@drug.name}/") do |file|
           next if file == '.' or file == '..'
           @drug.image = file
        end

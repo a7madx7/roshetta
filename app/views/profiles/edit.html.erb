@@ -1,0 +1,27 @@
+<h1>Complete your profile</h1>
+
+<%= simple_form_for current_user.profile  do |f| %>
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.input :address, label: false, placeholder: 'Please fill in your address', class: '' %>
+    </div>
+    <div class="input-field col s6">
+      <%= f.input :land_line, label: false, placeholder: 'Please fill in your land line', class: '' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6">
+      <%= f.input :speciality, label: false, as: :select, prompt: 'Select your speciality', collection: %w(Paediatrician Gynecologist Oncologist) %>
+    </div>
+    <div class="input-field col s6">
+      <%= f.input :land_line, label: false, placeholder: 'Please fill in your land line', class: '' %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="actions">
+      <%= f.submit 'Complete your profile', class: 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

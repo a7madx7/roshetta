@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
   def get_images_for(item, o, l = 3, f = 'png')
     # d = Drug.first; d.image = ''; d.save; exit
-    `googleimagesdownload -k #{item} -o #{o} -l #{l} -f #{f}`
+    # `googleimagesdownload -k #{item} -o #{o} -l #{l} -f #{f}`
+    system("googleimagesdownload -k #{item} -o #{o} -l #{l} -f #{f}")
   end
 end
