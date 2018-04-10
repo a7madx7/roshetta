@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180408211011) do
+ActiveRecord::Schema.define(version: 20180410052238) do
 
   create_table "badges", force: :cascade do |t|
     t.string "image"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20180408211011) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.integer "visit_count"
+    t.boolean "promoted", default: false
+    t.boolean "advertised", default: false
     t.index ["country_id"], name: "index_companies_on_country_id"
   end
 
@@ -90,6 +92,8 @@ ActiveRecord::Schema.define(version: 20180408211011) do
     t.datetime "updated_at", null: false
     t.string "image", default: "drug.png"
     t.integer "visit_count", default: 0, null: false
+    t.boolean "promoted", default: false
+    t.boolean "advertised", default: false
   end
 
   create_table "forms", force: :cascade do |t|
@@ -104,6 +108,15 @@ ActiveRecord::Schema.define(version: 20180408211011) do
     t.datetime "updated_at", null: false
     t.string "image", default: "generic.png"
     t.integer "visit_count", default: 0, null: false
+    t.decimal "oral_bioavailability"
+    t.decimal "iv_bioavailability", default: "100.0"
+    t.decimal "sc_bioavailability", default: "0.0"
+    t.decimal "rectal_bioavailability", default: "0.0"
+    t.decimal "half_life_in_hours", default: "0.0"
+    t.decimal "protein_binding", default: "0.0"
+    t.string "excretion", default: "Hepatic"
+    t.string "metabolism", default: "Hepatic microsomal enzymes"
+    t.string "metabolism_specific", default: "Cytochrome P450"
   end
 
   create_table "interactions", force: :cascade do |t|
@@ -147,6 +160,8 @@ ActiveRecord::Schema.define(version: 20180408211011) do
     t.string "speciality", default: "GP", null: false
     t.string "theme"
     t.string "preferred_charting_library"
+    t.boolean "promoted", default: false
+    t.boolean "advertised", default: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -208,6 +223,7 @@ ActiveRecord::Schema.define(version: 20180408211011) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.integer "profile_id"
+    t.string "role", default: "user", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["profile_id"], name: "index_users_on_profile_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
