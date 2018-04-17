@@ -49,9 +49,10 @@ end
 
 def country_seed
   puts 'Started seeding countries...'
-  Country.create({name: 'Universal'})
+  Country.create(name: 'Universal')
   ISO3166::Country.all.each do |country|
-    Country.create({name: country.name})
+    inflation_factor = country.name =~ /egy/ ? 1.5 : 1.12
+    Country.create(name: country.name, inflation_factor: inflation_factor)
   end
   puts 'Finished seeding countries.'
 end

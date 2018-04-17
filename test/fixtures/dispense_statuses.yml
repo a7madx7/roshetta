@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pom: false
+  otc: false
+  detailed_description: MyText
+  generic: one
+
+two:
+  pom: false
+  otc: false
+  detailed_description: MyText
+  generic: two

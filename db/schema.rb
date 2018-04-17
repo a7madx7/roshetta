@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410052238) do
+ActiveRecord::Schema.define(version: 20180417101915) do
 
   create_table "badges", force: :cascade do |t|
     t.string "image"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20180410052238) do
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "inflation_factor", default: "1.12"
   end
 
   create_table "diagnoses", force: :cascade do |t|
@@ -56,6 +57,16 @@ ActiveRecord::Schema.define(version: 20180410052238) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "dispense_statuses", force: :cascade do |t|
+    t.boolean "pom", default: true, null: false
+    t.boolean "otc", default: false, null: false
+    t.text "detailed_description"
+    t.integer "generic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["generic_id"], name: "index_dispense_statuses_on_generic_id"
   end
 
   create_table "drug_categories", force: :cascade do |t|
@@ -117,6 +128,8 @@ ActiveRecord::Schema.define(version: 20180410052238) do
     t.string "excretion", default: "Hepatic"
     t.string "metabolism", default: "Hepatic microsomal enzymes"
     t.string "metabolism_specific", default: "Cytochrome P450"
+    t.decimal "molecular_weight", default: "0.0"
+    t.string "molecular_weight_unit", default: "molar"
   end
 
   create_table "interactions", force: :cascade do |t|
@@ -142,6 +155,16 @@ ActiveRecord::Schema.define(version: 20180410052238) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["rx_id"], name: "index_patients_on_rx_id"
+  end
+
+  create_table "prices", force: :cascade do |t|
+    t.integer "drug_id"
+    t.decimal "value"
+    t.date "from_date"
+    t.date "to_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["drug_id"], name: "index_prices_on_drug_id"
   end
 
   create_table "profiles", force: :cascade do |t|

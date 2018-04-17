@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ecb9e0c-982b-4f50-9e24-d5c7456d3666" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/models/user.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/user.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/drug.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/drug.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/generic.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/generic.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/drug_seed.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/drug_seed.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20180322213452_create_drugs.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20180322213452_create_drugs.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrate/20180329005411_create_generics.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrate/20180329005411_create_generics.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/simple_attribute_seed.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/simple_attribute_seed.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -36,21 +42,12 @@
     <favorites_list name="roshetta" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="drug.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/drug.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20180409122303_add_promoted_and_advertised_to_companies.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20180409122303_add_promoted_and_advertised_to_companies.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="64" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
+            <state relative-caret-position="368">
+              <caret line="38" selection-start-line="38" selection-end-line="38" />
             </state>
           </provider>
         </entry>
@@ -58,71 +55,71 @@
       <file leaf-file-name="20180409122408_add_promoted_and_advertised_to_drugs.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/migrate/20180409122408_add_promoted_and_advertised_to_drugs.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="92">
+              <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20180409122531_add_promoted_and_advertised_to_profiles.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20180409122531_add_promoted_and_advertised_to_profiles.rb">
+      <file leaf-file-name="20180322213452_create_drugs.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20180322213452_create_drugs.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+            <state relative-caret-position="161">
+              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rx_item.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/rx_item.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="drug.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/drug.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rx.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/rx.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20180409124722_add_role_to_users.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20180409124722_add_role_to_users.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20180410052238_add_bioavailability_profiles_to_generics.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20180410052238_add_bioavailability_profiles_to_generics.rb">
+      <file leaf-file-name="generic.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/generic.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="184">
-              <caret line="8" column="65" lean-forward="true" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+              <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20180329005411_create_generics.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20180329005411_create_generics.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20180417101147_add_inflation_factor_to_countries.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20180417101147_add_inflation_factor_to_countries.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="69" selection-start-line="2" selection-start-column="69" selection-end-line="2" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20180410052238_add_bioavailability_profiles_to_generics.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20180410052238_add_bioavailability_profiles_to_generics.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="price.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/price.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drug_seed.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/drug_seed.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="44" column="22" lean-forward="true" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -180,11 +177,21 @@
         <option value="$PROJECT_DIR$/db/migrate/20180409122408_add_promoted_and_advertised_to_drugs.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180409122531_add_promoted_and_advertised_to_profiles.rb" />
         <option value="$PROJECT_DIR$/app/models/rx_item.rb" />
-        <option value="$PROJECT_DIR$/app/models/drug.rb" />
         <option value="$PROJECT_DIR$/app/models/rx.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180409124722_add_role_to_users.rb" />
         <option value="$PROJECT_DIR$/app/models/user.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20180410052238_add_bioavailability_profiles_to_generics.rb" />
+        <option value="$PROJECT_DIR$/app/models/price.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20180417095725_add_molecular_weight_to_generics.rb" />
+        <option value="$PROJECT_DIR$/app/models/drug.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20180417101147_add_inflation_factor_to_countries.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20180322213452_create_drugs.rb" />
+        <option value="$PROJECT_DIR$/app/models/dispense_status.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20180417101915_create_dispense_statuses.rb" />
+        <option value="$PROJECT_DIR$/app/models/generic.rb" />
+        <option value="$PROJECT_DIR$/db/migrate/20180329005411_create_generics.rb" />
+        <option value="$PROJECT_DIR$/db/simple_attribute_seed.rb" />
+        <option value="$PROJECT_DIR$/db/drug_seed.rb" />
       </list>
     </option>
   </component>
@@ -200,9 +207,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="900" />
+    <option name="height" value="797" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -211,45 +219,14 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="RailsProjectView" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="roshetta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="roshetta" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="roshetta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="roshetta" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="roshetta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="roshetta" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="roshetta" type="b2602c69:ProjectViewProjectNode" />
-              <item name="roshetta" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="user&#9;null&#9;null&#10;rx&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/models/rx.rb&#10;drug&#9;null&#9;null&#10;rxi&#9;null&#9;null&#10;promo&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/db/migrate/20180409122303_add_promoted_and_advertised_to_companies.rb&#10;gem&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/Gemfile&#10;gemf&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/Gemfile&#10;footer&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/layouts/_footer.html.erb&#10;sca&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/stylesheets/scaffolds.scss&#10;scaffold&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/stylesheets/scaffolds.scss&#10;edit&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/profiles/edit.html.erb&#10;routes&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/config/routes.rb&#10;welcome&#9;null&#9;null&#10;profile&#9;null&#9;null&#10;gemfi&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/Gemfile&#10;new&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/rxes/new.html.erb&#10;app&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/application.js&#10;rxcoff&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/rxes.coffee&#10;apjs&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/application.js&#10;appsc&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/stylesheets/application.scss&#10;appcss&#9;FILE&#9;file:///Users/a7madx7/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.1.5/lib/rails/generators/rails/app/templates/app/assets/stylesheets/application.css&#10;appjs&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/application.js&#10;appscs&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/stylesheets/application.scss&#10;apphtml&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/layouts/application.html.erb&#10;rxcon&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/controllers/rxes_controller.rb&#10;rxcont&#9;null&#9;null&#10;apphtmler&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/layouts/application.html.erb&#10;comph&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/helpers/company_helper.rb&#10;newhtml&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/devise/sessions/new.html.erb&#10;morph&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/morph_search.js.erb&#10;sessions/new&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/devise/sessions/new.html.erb&#10;appcon&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/controllers/application_controller.rb&#10;search&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/morph_search.js.erb&#10;drugscon&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/controllers/drugs_controller.rb&#10;appcont&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/controllers/application_controller.rb&#10;icons&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/db/icons.txt&#10;apphtmlerb&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/layouts/application.html.erb&#10;cons&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/db/icons.txt&#10;index&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/company/index.html.erb&#10;helper&#9;null&#9;null&#10;copy&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/layouts/_copyright.html.erb&#10;foot&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/stylesheets/footer.scss&#10;morphs&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/morph_search.js.erb&#10;drugs&#9;null&#9;null&#10;apphelp&#9;null&#9;null&#10;companycon&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/controllers/company_controller.rb&#10;company.scs&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/stylesheets/company.scss&#10;custom&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/stylesheets/custom.scss&#10;copyri&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/layouts/_copyright.html.erb&#10;appscss&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/stylesheets/application.scss" />
+    <property name="SearchEverywhereHistoryKey" value="drugse&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/db/drug_seed.rb&#10;simpleatt&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/db/simple_attribute_seed.rb&#10;creategene&#9;null&#9;null&#10;generic&#9;null&#9;null&#10;dispen&#9;null&#9;null&#10;createdru&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/db/migrate/20180322213452_create_drugs.rb&#10;add&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/db/migrate/20180409122408_add_promoted_and_advertised_to_drugs.rb&#10;infla&#9;null&#9;null&#10;drug&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/models/drug.rb&#10;addmol&#9;null&#9;null&#10;createcomp&#9;null&#9;null&#10;createdrugs&#9;null&#9;null&#10;simplatt&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/db/simple_attribute_seed.rb&#10;createpri&#9;null&#9;null&#10;price&#9;null&#9;null&#10;sessionscon&#9;FILE&#9;file:///Users/a7madx7/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/devise-4.4.0/app/controllers/devise/sessions_controller.rb&#10;user&#9;null&#9;null&#10;rx&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/models/rx.rb&#10;rxi&#9;null&#9;null&#10;promo&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/db/migrate/20180409122303_add_promoted_and_advertised_to_companies.rb&#10;gem&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/Gemfile&#10;gemf&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/Gemfile&#10;footer&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/layouts/_footer.html.erb&#10;sca&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/stylesheets/scaffolds.scss&#10;scaffold&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/stylesheets/scaffolds.scss&#10;edit&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/profiles/edit.html.erb&#10;routes&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/config/routes.rb&#10;welcome&#9;null&#9;null&#10;profile&#9;null&#9;null&#10;gemfi&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/Gemfile&#10;new&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/rxes/new.html.erb&#10;app&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/application.js&#10;rxcoff&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/rxes.coffee&#10;apjs&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/application.js&#10;appsc&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/stylesheets/application.scss&#10;appcss&#9;FILE&#9;file:///Users/a7madx7/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/railties-5.1.5/lib/rails/generators/rails/app/templates/app/assets/stylesheets/application.css&#10;appjs&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/application.js&#10;appscs&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/stylesheets/application.scss&#10;apphtml&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/layouts/application.html.erb&#10;rxcon&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/controllers/rxes_controller.rb&#10;rxcont&#9;null&#9;null&#10;apphtmler&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/layouts/application.html.erb&#10;comph&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/helpers/company_helper.rb&#10;newhtml&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/devise/sessions/new.html.erb&#10;morph&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/morph_search.js.erb&#10;sessions/new&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/views/devise/sessions/new.html.erb&#10;appcon&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/controllers/application_controller.rb&#10;search&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/assets/javascripts/morph_search.js.erb&#10;drugscon&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/controllers/drugs_controller.rb&#10;appcont&#9;FILE&#9;file:///Users/a7madx7/Desktop/scripts/roshetta/app/controllers/application_controller.rb" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
@@ -375,12 +352,13 @@
       <option name="presentableId" value="Default" />
       <updated>1522909342523</updated>
       <workItem from="1522909348010" duration="513000" />
-      <workItem from="1522909916185" duration="25459000" />
+      <workItem from="1522909916185" duration="25828000" />
+      <workItem from="1523625002139" duration="2957000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25972000" />
+    <option name="totallyTimeSpent" value="29298000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -395,25 +373,25 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25286534" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297619" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Database" order="3" weight="0.3295129" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3297619" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3595238" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.25286534" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.3295129" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3595238" />
       <window_info id="Favorites" order="2" side_tool="true" weight="0.3295129" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,40 +401,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/datatables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="231" column="1" selection-start-line="231" selection-start-column="1" selection-end-line="231" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/devise.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/company.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/company_controller.rb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_pagination.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="49" column="1" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -534,9 +478,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/_search.html.erb">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/devise/sessions/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
@@ -583,9 +524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
           <caret line="37" column="15" selection-start-line="37" selection-start-column="15" selection-end-line="37" selection-end-column="15" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -631,9 +569,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/scaffolds.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180408211011_create_patients.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -652,14 +587,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1492">
           <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding>
-            <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#div#8;n#div#1;n#!!top" />
-            <element signature="n#div#7;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#div#8;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#8;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#8;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -672,7 +599,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
+        <state relative-caret-position="1426">
           <caret line="62" column="14" selection-start-line="62" selection-start-column="14" selection-end-line="62" selection-end-column="14" />
         </state>
       </provider>
@@ -681,13 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
           <caret line="3" column="64" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20180409122408_add_promoted_and_advertised_to_drugs.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -705,13 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/drug.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/rx.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -726,6 +639,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/devise-4.4.0/app/controllers/devise/sessions_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="54" lean-forward="true" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -733,10 +653,115 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180417094927_create_prices.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180329004806_create_companies.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180417095725_add_molecular_weight_to_generics.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="74" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/drug.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180417101147_add_inflation_factor_to_countries.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="69" selection-start-line="2" selection-start-column="69" selection-end-line="2" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20180410052238_add_bioavailability_profiles_to_generics.rb">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180409122408_add_promoted_and_advertised_to_drugs.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="5" lean-forward="true" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/dispense_status.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="72" selection-start-line="2" selection-start-column="72" selection-end-line="2" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180417101915_create_dispense_statuses.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/generic.rb">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="8" column="65" lean-forward="true" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
+          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180329005411_create_generics.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20180322213452_create_drugs.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/simple_attribute_seed.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="56" column="36" lean-forward="true" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+          <folding>
+            <element signature="e#1283#1749#0" />
+            <element signature="e#1974#3746#0" />
+            <element signature="e#3749#4029#0" />
+            <element signature="e#4031#4615#0" />
+            <element signature="e#4617#5114#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/price.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="5" lean-forward="true" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/drug_seed.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="44" column="22" lean-forward="true" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
         </state>
       </provider>
     </entry>

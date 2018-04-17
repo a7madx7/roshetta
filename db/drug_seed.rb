@@ -29,11 +29,20 @@ module DrugSeed
             # unless d['contents'].nil?
             #   drug.contents = d['contents'].to_f
             # end
+          end
 
-            # price
-            unless d['price'].nil?
-              m.price = d['price'].to_s.to_f * 1.5 # new price factor
-            end
+          # price
+          # todo: check the validty of the current price implementation
+          unless d['price'].nil?
+            inf = @drug.country.inflation_factor
+            old_price = Price.new(drug_id: @drug.id, value: d['price'].to_s.to_f / inf,
+                                  from_date: 2.years.ago.to_date, to_date: 6.months.ago.to_date)
+            current_price = Price.new(drug_id: @drug.id, value: d['price'].to_s.to_f,
+                                      from_date: 6.months.ago.to_date, to_date: 1.year.from_now.to_date)
+            future_price = Price.new(drug_id: @drug.id, value: d['price'].to_s.to_f * inf,
+                                     from_date: 1.year.from_now.to_date, to_date: 2.years.from_now.to_date)
+            @drug.prices << [old_price, current_price, future_price]
+            @drug.save
           end
 
            # categories

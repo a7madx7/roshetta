@@ -6,6 +6,8 @@ class Drug < ApplicationRecord
 
   validates :price, presence: true, numericality: {less_than: 10_000_000, greater_than: 0.01 }
 
+  has_many :prices, class_name: 'Price', foreign_key: 'price_id'
+  
   has_many :drug_categories
   has_many :categories, through: :drug_categories
 
@@ -23,5 +25,17 @@ class Drug < ApplicationRecord
 
   def to_s
     "{ name: #{name}, company: #{company.name}, country: #{country.name}}"
+  end
+
+  def current_price
+
+  end
+
+  def future_price
+
+  end
+
+  def old_price
+
   end
 end
