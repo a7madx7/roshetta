@@ -1,5 +1,5 @@
 class RxesController < ApplicationController
-  before_action :set_rx, only: [:show, :edit, :update, :destroy]
+  before_action :set_rx, only: [:show, :edit, :update, :destroy, :like, :dislike]
 
   # GET /rxes
   # GET /rxes.json
@@ -73,6 +73,18 @@ class RxesController < ApplicationController
     end
   end
 
+  def like
+    if @rx.liked_by current_user
+      @rx.unliked_by current_user
+      @rx.disliked_by current_user
+    else
+      @rx.liked_by current_user
+    end
+  end
+
+  def dislike
+
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_rx

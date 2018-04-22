@@ -4,10 +4,11 @@ class Drug < ApplicationRecord
       { minimum: 2, maximum: 256, too_short: 'Drug name needs to be more than 2 characters',
         too_long: 'Drug name can not be more than 256 characters in length' }
 
-  validates :price, presence: true, numericality: {less_than: 10_000_000, greater_than: 0.01 }
+  acts_as_votable
 
-  has_many :prices, class_name: 'Price', foreign_key: 'price_id'
-  
+  has_many :prices
+  has_many :suggestion_terms
+
   has_many :drug_categories
   has_many :categories, through: :drug_categories
 
@@ -21,6 +22,7 @@ class Drug < ApplicationRecord
   belongs_to :company
   belongs_to :form
 
+  # todo: add at least ten scopes to sort drugs with
   scope :popular, -> {order(:visit_count, :desc)}
 
   def to_s
@@ -37,5 +39,11 @@ class Drug < ApplicationRecord
 
   def old_price
 
+  end
+
+  def self.suggestion_for(term)
+    Drug.joins(:suggestion_terms)
+        .where('suggestion_terms.term like ?', "%#{term}%")
+        .group(:id)
   end
 end

@@ -1,6 +1,8 @@
 class Company < ApplicationRecord
   validates :name, uniqueness: true, presence: true
-  
+
+  acts_as_votable
+
   belongs_to :country
   has_many :drugs
 

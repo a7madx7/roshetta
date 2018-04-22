@@ -35,19 +35,19 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
-  gem 'ffaker'
   gem 'factory_bot'
+  gem 'ffaker'
   gem 'rails_db'
+  gem 'selenium-webdriver'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
@@ -57,27 +57,26 @@ group :production do
   gem 'pg'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # gem 'bootsnap', '>= 1.1.0', require: false
 # static pages
 # gem 'high_voltage'
 
-gem 'devise'
-gem 'simple_form'
-gem 'friendly_id'
-gem 'will_paginate'
-gem 'bootstrap', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'cancan'
-gem 'better_errors'
-gem 'country_select'
-gem 'countries'
-gem 'rqrcode'
-gem 'chartkick'
-gem 'hightop'
-gem 'will_paginate-bootstrap4'
-gem 'omniauth'
+gem 'acts_as_votable', '~> 0.11.1'
 gem 'alertifyjs-rails'
-gem 'bootstrap',     '~> 4.0.0'
+gem 'better_errors'
+gem 'bootstrap', '~> 4.0.0'
+gem 'cancan'
+gem 'chartkick'
+gem 'countries'
+gem 'country_select'
+gem 'devise'
+gem 'friendly_id'
+gem 'hightop'
+gem 'jquery-rails'
 gem 'materialize-sass', '~> 1.0.0.beta'
+gem 'omniauth'
+gem 'rqrcode'
+gem 'simple_form'
+gem 'will_paginate-bootstrap4'

@@ -1,8 +1,8 @@
 class CreateInteractions < ActiveRecord::Migration[5.1]
   def change
     create_table :interactions do |t|
-      t.integer :first_drug
-      t.integer :second_drug
+      t.integer :first_drug, null: false
+      t.integer :second_drug, null: false
       t.string :title
       t.text :description
       t.string :level

@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180417101915) do
+ActiveRecord::Schema.define(version: 20180422010057) do
+
+  create_table "answers", force: :cascade do |t|
+    t.integer "question_id"
+    t.integer "user_id"
+    t.text "content"
+    t.string "title"
+    t.string "link"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
 
   create_table "badges", force: :cascade do |t|
     t.string "image"
@@ -41,6 +54,14 @@ ActiveRecord::Schema.define(version: 20180417101915) do
     t.integer "visit_count"
     t.boolean "promoted", default: false
     t.boolean "advertised", default: false
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
+    t.integer "prescribe_count", default: 0, null: false
     t.index ["country_id"], name: "index_companies_on_country_id"
   end
 
@@ -91,13 +112,13 @@ ActiveRecord::Schema.define(version: 20180417101915) do
 
   create_table "drugs", force: :cascade do |t|
     t.string "name"
-    t.decimal "price"
     t.integer "company_id"
     t.integer "country_id"
     t.integer "form_id"
+    t.integer "price_id"
     t.boolean "market_available", default: true
     t.text "professional_comment", default: "Please share your professional comment about this drug with us."
-    t.datetime "invented_at", default: "2008-04-04 05:19:24"
+    t.date "invented_at", default: "2008-04-21"
     t.string "market_status", default: "patent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -105,6 +126,14 @@ ActiveRecord::Schema.define(version: 20180417101915) do
     t.integer "visit_count", default: 0, null: false
     t.boolean "promoted", default: false
     t.boolean "advertised", default: false
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
+    t.integer "prescribe_count", default: 0, null: false
   end
 
   create_table "forms", force: :cascade do |t|
@@ -115,6 +144,7 @@ ActiveRecord::Schema.define(version: 20180417101915) do
 
   create_table "generics", force: :cascade do |t|
     t.string "name"
+    t.integer "dispense_status_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image", default: "generic.png"
@@ -130,6 +160,14 @@ ActiveRecord::Schema.define(version: 20180417101915) do
     t.string "metabolism_specific", default: "Cytochrome P450"
     t.decimal "molecular_weight", default: "0.0"
     t.string "molecular_weight_unit", default: "molar"
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
+    t.integer "prescribe_count", default: 0, null: false
   end
 
   create_table "interactions", force: :cascade do |t|
@@ -143,6 +181,13 @@ ActiveRecord::Schema.define(version: 20180417101915) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image", default: "interaction.png"
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
     t.index ["first_drug"], name: "index_interactions_on_first_drug"
     t.index ["second_drug"], name: "index_interactions_on_second_drug"
   end
@@ -155,6 +200,22 @@ ActiveRecord::Schema.define(version: 20180417101915) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["rx_id"], name: "index_patients_on_rx_id"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "image"
+    t.string "link"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
   end
 
   create_table "prices", force: :cascade do |t|
@@ -181,11 +242,22 @@ ActiveRecord::Schema.define(version: 20180417101915) do
     t.boolean "verified", default: false, null: false
     t.decimal "reputation"
     t.string "speciality", default: "GP", null: false
-    t.string "theme"
-    t.string "preferred_charting_library"
+    t.string "theme", default: "material"
+    t.string "preferred_charting_library", default: "highcharts"
     t.boolean "promoted", default: false
     t.boolean "advertised", default: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer "user_id"
+    t.text "content"
+    t.string "title"
+    t.string "link"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
   create_table "rx_items", force: :cascade do |t|
@@ -221,8 +293,30 @@ ActiveRecord::Schema.define(version: 20180417101915) do
     t.datetime "updated_at", null: false
     t.string "image", default: "rx.png"
     t.string "password", default: "2018", null: false
+    t.integer "cached_votes_total", default: 0
+    t.integer "cached_votes_score", default: 0
+    t.integer "cached_votes_up", default: 0
+    t.integer "cached_votes_down", default: 0
+    t.integer "cached_weighted_score", default: 0
+    t.integer "cached_weighted_total", default: 0
+    t.float "cached_weighted_average", default: 0.0
     t.index ["issuer_id"], name: "index_rxes_on_issuer_id"
     t.index ["patient_id"], name: "index_rxes_on_patient_id"
+  end
+
+  create_table "search_engines", force: :cascade do |t|
+    t.string "model"
+    t.string "regex"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "suggestion_terms", force: :cascade do |t|
+    t.string "term"
+    t.integer "drug_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["drug_id"], name: "index_suggestion_terms_on_drug_id"
   end
 
   create_table "units", force: :cascade do |t|
@@ -250,6 +344,20 @@ ActiveRecord::Schema.define(version: 20180417101915) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["profile_id"], name: "index_users_on_profile_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.string "votable_type"
+    t.integer "votable_id"
+    t.string "voter_type"
+    t.integer "voter_id"
+    t.boolean "vote_flag"
+    t.string "vote_scope"
+    t.integer "vote_weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+    t.index ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope"
   end
 
 end
