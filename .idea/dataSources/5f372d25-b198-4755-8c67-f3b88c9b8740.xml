@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="Rails roshetta: development">
-  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.7">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.8">
     <root id="1"/>
     <schema id="2" parent="1" name="main">
       <Current>1</Current>
@@ -55,7 +55,6 @@
     <index id="30" parent="6" name="sqlite_autoindex_ar_internal_metadata_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>key</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="31" parent="6">
@@ -105,7 +104,6 @@
     </column>
     <index id="41" parent="7" name="index_badges_on_profile_id">
       <ColNames>profile_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="42" parent="7">
       <ColNames>id</ColNames>
@@ -182,7 +180,6 @@
     </column>
     <index id="58" parent="9" name="index_companies_on_country_id">
       <ColNames>country_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="59" parent="9">
       <ColNames>id</ColNames>
@@ -275,11 +272,9 @@
     </column>
     <index id="78" parent="12" name="index_drug_categories_on_drug_id">
       <ColNames>drug_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="79" parent="12" name="index_drug_categories_on_category_id">
       <ColNames>category_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="80" parent="12">
       <ColNames>id</ColNames>
@@ -319,11 +314,9 @@
     </column>
     <index id="88" parent="13" name="index_drug_generics_on_category_id">
       <ColNames>category_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="89" parent="13" name="index_drug_generics_on_drug_id">
       <ColNames>drug_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="90" parent="13">
       <ColNames>id</ColNames>
@@ -510,11 +503,9 @@
     </column>
     <index id="129" parent="17" name="index_interactions_on_first_drug">
       <ColNames>first_drug</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="130" parent="17" name="index_interactions_on_second_drug">
       <ColNames>second_drug</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="131" parent="17">
       <ColNames>id</ColNames>
@@ -594,7 +585,6 @@
     </column>
     <index id="146" parent="18" name="index_profiles_on_user_id">
       <ColNames>user_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="147" parent="18">
       <ColNames>id</ColNames>
@@ -647,11 +637,9 @@
     </column>
     <index id="158" parent="19" name="index_rx_items_on_drug_id">
       <ColNames>drug_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="159" parent="19" name="index_rx_items_on_rx_id">
       <ColNames>rx_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="160" parent="19">
       <ColNames>id</ColNames>
@@ -746,11 +734,9 @@
     </column>
     <index id="181" parent="20" name="index_rxes_on_patient_id">
       <ColNames>patient_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <index id="182" parent="20" name="index_rxes_on_issuer_id">
       <ColNames>issuer_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="183" parent="20">
       <ColNames>id</ColNames>
@@ -764,7 +750,6 @@
     <index id="185" parent="21" name="sqlite_autoindex_schema_migrations_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>version</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <key id="186" parent="21">
@@ -894,17 +879,14 @@
     </column>
     <index id="214" parent="25" name="index_users_on_email">
       <ColNames>email</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="215" parent="25" name="index_users_on_reset_password_token">
       <ColNames>reset_password_token</ColNames>
-      <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
     <index id="216" parent="25" name="index_users_on_profile_id">
       <ColNames>profile_id</ColNames>
-      <ColumnCollations></ColumnCollations>
     </index>
     <key id="217" parent="25">
       <ColNames>id</ColNames>

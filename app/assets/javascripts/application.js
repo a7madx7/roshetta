@@ -16,7 +16,6 @@
 //= require highcharts
 //= require chartkick
 //= require bootstrap
-//= require materialize
 //= require_tree .
 
 $(document).ready(function () {
@@ -34,8 +33,11 @@ $(document).ready(function () {
     txtClock.html(hours + ' : ' + minutes + ' : ' + seconds);
   }
 
-  setInterval(updateTime, 1000);
-  updateTime();
-
+  // var clock = setInterval(updateTime, 1000);
+  // updateTime();
+  // clearInterval(clock);
+  // Add form-control class to select elements
+  // var $selects = $('select');
+  // $selects.removeClass('form-control').addClass('form-control');
 });
 

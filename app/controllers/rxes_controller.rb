@@ -5,11 +5,13 @@ class RxesController < ApplicationController
   # GET /rxes.json
   def index
     @rxes = Rx.all
+    authorize! :read, @rxes
   end
 
   # GET /rxes/1
   # GET /rxes/1.json
   def show
+    authorize! :read, @rx
     require 'rqrcode'
     qr = RQRCode::QRCode.new(rx_url(@rx))
     png = qr.as_png(
@@ -31,11 +33,13 @@ class RxesController < ApplicationController
 
   # GET /rxes/1/edit
   def edit
+    authorize! :edit, @rx
   end
 
   # POST /rxes
   # POST /rxes.json
   def create
+    authorize! :create, @rx
     @rx = Rx.new(rx_params)
 
     respond_to do |format|
@@ -52,6 +56,7 @@ class RxesController < ApplicationController
   # PATCH/PUT /rxes/1
   # PATCH/PUT /rxes/1.json
   def update
+    authorize! :update, @rx
     respond_to do |format|
       if @rx.update(rx_params)
         format.html { redirect_to @rx, notice: 'Rx was successfully updated.' }
@@ -66,6 +71,7 @@ class RxesController < ApplicationController
   # DELETE /rxes/1
   # DELETE /rxes/1.json
   def destroy
+    authorize! :destroy, @rx
     @rx.destroy
     respond_to do |format|
       format.html { redirect_to rxes_url, notice: 'Rx was successfully destroyed.' }

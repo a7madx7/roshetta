@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
-<%= drugs_by_price_bar %>
+<%= drugs_by_price_line %>
 <br>
-<%= link_to 'New Drug', new_drug_path %>
+<%- if current_user.admin? %>
+  <%= link_to 'New Drug', new_drug_path, class: 'btn btn-success' %>
+<% end %>

@@ -51,6 +51,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'guard-livereload', '~> 2.5.2', require: false
 end
 
 group :production do
@@ -67,16 +68,19 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'alertifyjs-rails'
 gem 'better_errors'
 gem 'bootstrap', '~> 4.0.0'
-gem 'cancan'
+gem 'cancancan'
 gem 'chartkick'
 gem 'countries'
 gem 'country_select'
+gem 'decent_exposure'
 gem 'devise'
 gem 'friendly_id'
 gem 'hightop'
 gem 'jquery-rails'
-gem 'materialize-sass', '~> 1.0.0.beta'
+# gem 'materialize-sass', '~> 1.0.0.beta'
 gem 'omniauth'
 gem 'rqrcode'
 gem 'simple_form'
 gem 'will_paginate-bootstrap4'
+gem 'administrate', github: 'thoughtbot/administrate'
+gem 'active_model_serializers', '~> 0.8.1'

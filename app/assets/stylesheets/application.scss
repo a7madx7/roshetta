@@ -1,21 +1,27 @@
+@import 'colors';
 @import 'login_form';
 @import 'footer';
 @import 'demo';
 @import 'component';
 @import 'custom';
-@import 'datatables';
 @import 'welcome';
-@import "https://fonts.googleapis.com/icon?family=Material+Icons";
-@import "materialize";
+@import 'bootstrap';
+nav,
+nav a,
+header a {
+    background-color: inherit;
+    border: none;
+    color: $primary-color;
+    &:hover {
+        color: rgb(233, 66, 44);
+        text-decoration: none;
+    }
+}
 
-nav, nav a{
-  background-color: inherit;
-  border: none;
-  color: $primary-color;
+.sidebar {
+    border: none;
 }
-.sidebar{
-  border: none;
-}
+
 .centered {
     text-align: center;
     left: 50%;
@@ -32,4 +38,8 @@ nav, nav a{
     font-size: 1.7em;
     color: #f08a8f;
     transition: font-size 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.btn-primary{
+  background-color: $primary-color;
 }

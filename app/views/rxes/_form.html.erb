@@ -1,510 +1,134 @@
+<div class="row new-rx card border-warning mb-3 text-center orange-gradient-bg" id="rx_info">  
 
-  <div class="col m9"><br>
-    <div class="card section scrollspy" id="autocomplete-demo">
-      <div class="card-content"><span class="card-title">Patient social security number</span>
+    <div class="card-title center rx-header">
+      <h4 class="">Rx Starting Info</h4>
+    </div>
+    <div class="card-body">
+       <%= form_with(model: rx, local: true, html: {class: 'col s12 m8'}) do |form| %>
+        <% if rx.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(rx.errors.count, "error") %> prohibited this rx from being saved:</h2>
+
+            <ul>
+              <% rx.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
         <div class="row">
-          <div class="col s12">
-            <div class="row">
-              <div class="input-field col s12">
-                <i class="material-icons prefix">textsms</i>
-                <input type="text" id="autocomplete-input" class="autocomplete" data-target="autocomplete-options-13c7c140-9b22-40e2-6e2b-a4f42dd34bf0">
-                <ul id="autocomplete-options-13c7c140-9b22-40e2-6e2b-a4f42dd34bf0" class="autocomplete-content dropdown-content" tabindex="0" style=""></ul>
-                <label for="autocomplete-input" class="active">Patient social security number</label>
-              </div>
+          <%= form.fields_for :patient, class: 'form-group' do |p| %>
+            <div class="input-field col s6">
+              <%= p.label :name, class: 'active', for: 'rx_patient_name' %>
+              <%= p.text_field :name,   class: 'form-control', placeholder: 'Patient full name goes here' %>
             </div>
+          <% end %>
+
+
+          <div class="input-field col s6 form-group">
+            <%= form.label :allowed_dispense_count, for: 'rx_allowed_dispense_count' %>
+            <%= form.select :allowed_dispense_count, dispense_counts, {}, { class: 'form-control', id: 'rx_allowed_dispense_count' } %>
+          </div>
+
+        </div>
+
+<!--
+        <div class="input-group mb-3">
+          <div class="custom-file">
+            <%# form.file_field :picture, class: 'custom-file-input', id: :rx_picture %>
+            <label class="custom-file-label" for="inputGroupFile01">Choose a related photo?</label>
           </div>
         </div>
-      </div>
-    </div>
+        <br />
 
-    <div class="card section scrollspy" id="inputs-demo">
-      <div class="card-content"><span class="card-title">Prescription meta data</span>
-        <div class="row">
-          <%= form_with(model: rx, local: true, html: {class: 'col s12'}) do |form| %>
-            <% if rx.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(rx.errors.count, "error") %> prohibited this rx from being saved:</h2>
-
-                <ul>
-                  <% rx.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                  <% end %>
-                </ul>
-              </div>
-            <% end %>
-
-            <div class="row">
-              <%= form.fields_for :patient do |p| %>
-                <div class="input-field col s6">
-                  <%= p.label :name, class: 'active', for: 'rx_patient_name' %>
-                  <%= p.text_field :name,   class: 'validate', placeholder: 'Patient full name goes here' %>
-                </div>
-              <% end %>
-
-
-              <div class="input-field col s6">
-                <%= form.label :allowed_dispense_count, for: 'rx_allowed_dispense_count' %>
-                <%= form.number_field :allowed_dispense_count, id: :rx_allowed_dispense_count, class: 'validate' %>
-              </div>
-
-            </div>
-
-            <div class="row">
-              <div class="file-field input-field col s12">
-                <%= form.label :picture %>
-                <%= form.file_field :picture, id: :rx_picture %>
-              </div>
-            </div>
-            <br />
-            <div class="row">
-              <div class="input-field col-s12">
-                <%= form.text_area :professional_comment, as: :text, id: :rx_professional_comment, placeholder: 'Write your professional comment on the case here.' %>
-              </div>
-            </div>
-            <div class="row">
-              <div class="-input-field col s12">
-                <%= form.text_field :short_diagnosis, id: :rx_short_diagnosis, class: 'validate', placeholder: 'Write short diagnosis' %>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <%= form.text_area :full_diagnosis, as: :text, id: :rx_full_diagnosis, placeholder: 'Write full diagnosis with extra comments here', class: 'validate' %>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <%= form.label :starts_at %>
-                <%= form.datetime_select :starts_at, id: :rx_starts_at %>
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s6">
-                <%= form.label :status %>
-                <%= form.text_field :status, id: :rx_status %>
-              </div>
-            </div>
-            </div>
-            </div>
-
-            <div class="row">
-              <div class="input-field col s12">
-                <label for="rx_expires_at">Expires at</label>
-                <select id="rx_expires_at_1i" name="rx[expires_at(1i)]">
-                  <option value="2013">2013</option>
-                  <option value="2014">2014</option>
-                  <option value="2015">2015</option>
-                  <option value="2016">2016</option>
-                  <option value="2017">2017</option>
-                  <option value="2018" selected="selected">2018</option>
-                  <option value="2019">2019</option>
-                  <option value="2020">2020</option>
-                  <option value="2021">2021</option>
-                  <option value="2022">2022</option>
-                  <option value="2023">2023</option>
-                </select>
-                <select id="rx_expires_at_2i" name="rx[expires_at(2i)]">
-                  <option value="1">January</option>
-                  <option value="2">February</option>
-                  <option value="3">March</option>
-                  <option value="4" selected="selected">April</option>
-                  <option value="5">May</option>
-                  <option value="6">June</option>
-                  <option value="7">July</option>
-                  <option value="8">August</option>
-                  <option value="9">September</option>
-                  <option value="10">October</option>
-                  <option value="11">November</option>
-                  <option value="12">December</option>
-                </select>
-                <select id="rx_expires_at_3i" name="rx[expires_at(3i)]">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-                  <option value="6">6</option>
-                  <option value="7">7</option>
-                  <option value="8" selected="selected">8</option>
-                  <option value="9">9</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                  <option value="13">13</option>
-                  <option value="14">14</option>
-                  <option value="15">15</option>
-                  <option value="16">16</option>
-                  <option value="17">17</option>
-                  <option value="18">18</option>
-                  <option value="19">19</option>
-                  <option value="20">20</option>
-                  <option value="21">21</option>
-                  <option value="22">22</option>
-                  <option value="23">23</option>
-                  <option value="24">24</option>
-                  <option value="25">25</option>
-                  <option value="26">26</option>
-                  <option value="27">27</option>
-                  <option value="28">28</option>
-                  <option value="29">29</option>
-                  <option value="30">30</option>
-                  <option value="31">31</option>
-                </select>
-                — <select id="rx_expires_at_4i" name="rx[expires_at(4i)]">
-                <option value="00">00</option>
-                <option value="01">01</option>
-                <option value="02">02</option>
-                <option value="03">03</option>
-                <option value="04">04</option>
-                <option value="05">05</option>
-                <option value="06">06</option>
-                <option value="07">07</option>
-                <option value="08">08</option>
-                <option value="09">09</option>
-                <option value="10">10</option>
-                <option value="11" selected="selected">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-              </select>
-                : <select id="rx_expires_at_5i" name="rx[expires_at(5i)]">
-                <option value="00">00</option>
-                <option value="01">01</option>
-                <option value="02">02</option>
-                <option value="03">03</option>
-                <option value="04">04</option>
-                <option value="05">05</option>
-                <option value="06">06</option>
-                <option value="07">07</option>
-                <option value="08">08</option>
-                <option value="09">09</option>
-                <option value="10">10</option>
-                <option value="11">11</option>
-                <option value="12">12</option>
-                <option value="13">13</option>
-                <option value="14">14</option>
-                <option value="15">15</option>
-                <option value="16">16</option>
-                <option value="17">17</option>
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
-                <option value="23">23</option>
-                <option value="24">24</option>
-                <option value="25">25</option>
-                <option value="26">26</option>
-                <option value="27">27</option>
-                <option value="28">28</option>
-                <option value="29">29</option>
-                <option value="30">30</option>
-                <option value="31">31</option>
-                <option value="32">32</option>
-                <option value="33" selected="selected">33</option>
-                <option value="34">34</option>
-                <option value="35">35</option>
-                <option value="36">36</option>
-                <option value="37">37</option>
-                <option value="38">38</option>
-                <option value="39">39</option>
-                <option value="40">40</option>
-                <option value="41">41</option>
-                <option value="42">42</option>
-                <option value="43">43</option>
-                <option value="44">44</option>
-                <option value="45">45</option>
-                <option value="46">46</option>
-                <option value="47">47</option>
-                <option value="48">48</option>
-                <option value="49">49</option>
-                <option value="50">50</option>
-                <option value="51">51</option>
-                <option value="52">52</option>
-                <option value="53">53</option>
-                <option value="54">54</option>
-                <option value="55">55</option>
-                <option value="56">56</option>
-                <option value="57">57</option>
-                <option value="58">58</option>
-                <option value="59">59</option>
-              </select>
-
-              </div>
-            </div>
-            <div class="card section scrollspy" id="switches-demo">
-              <div class="card-content"><span class="card-title">Rx settings</span><!-- Switch -->
-                <div class="row">
-                  <div class="switch col s4">
-                    <label>
-                      Regular drugs
-                      <input type="checkbox">
-                      <span class="lever"></span>
-                      High alert drugs
-                    </label>
-                  </div>
-
-                  <!-- Disabled Switch -->
-
-                  <div class="switch col s4">
-                    <label>
-                      Private Rx
-                      <input type="checkbox">
-                      <span class="lever"></span>
-                      Public Rx
-                    </label>
-                  </div>
-
-                  <div class="switch col s4">
-                    <label>
-                      Unexpirable
-                      <input type="checkbox">
-                      <span class="lever"></span>
-                      Expirable
-                    </label>
-                  </div>
-                  </div>
-
-
-              </div>
-
-            <div class="row">
-              <div class="card section scrollspy" id="picker-demo">
-                <div class="card-content"><span class="card-title">Picker</span>
-                  <div class="modal datepicker-modal" id="modal-3a1a3dc6-a3c9-358e-56f2-9fb25a8cdaf4" tabindex="0" style="z-index: 1003; display: none; opacity: 0; top: 4%; transform: scaleX(0.8) scaleY(0.8);">
-                    <div class="modal-content datepicker-container">
-                      <div class="datepicker-date-display">
-                        <span class="year-text">2018</span><span class="date-text">Sun, Apr 8</span></div>
-                      <div class="datepicker-calendar-container">
-                        <div class="pika-single">
-                          <div id="pika-title-ch" class="datepicker-controls" role="heading" aria-live="assertive">
-                            <button class="month-prev" type="button">
-                              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"></path>
-                                <path d="M0-.5h24v24H0z" fill="none"></path>
-                              </svg>
-                            </button>
-                            <div class="selects-container">
-                              <div class="select-wrapper select-month">
-                                <input class="select-dropdown dropdown-trigger" type="text" readonly="true" data-target="select-options-7fab42c2-aa6d-9f25-86f1-0c0b32a39408">
-                                <svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M7 10l5 5 5-5z"></path>
-                                  <path d="M0 0h24v24H0z" fill="none"></path>
-                                </svg>
-                                <select class="pika-select pika-select-month" tabindex="-1">
-                                  <option value="0">January</option>
-                                  <option value="1">February</option>
-                                  <option value="2">March</option>
-                                  <option value="3" selected="selected">April</option>
-                                  <option value="4">May</option>
-                                  <option value="5">June</option>
-                                  <option value="6">July</option>
-                                  <option value="7">August</option>
-                                  <option value="8">September</option>
-                                  <option value="9">October</option>
-                                  <option value="10">November</option>
-                                  <option value="11">December</option>
-                                </select></div>
-                              <div class="select-wrapper select-year">
-                                <input class="select-dropdown dropdown-trigger" type="text" readonly="true" data-target="select-options-46cdbfa8-d41a-7b8b-7b41-f96c7de1dc64">
-                                <svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                  <path d="M7 10l5 5 5-5z"></path>
-                                  <path d="M0 0h24v24H0z" fill="none"></path>
-                                </svg>
-                                <select class="pika-select pika-select-year" tabindex="-1">
-                                  <option value="2008">2008</option>
-                                  <option value="2009">2009</option>
-                                  <option value="2010">2010</option>
-                                  <option value="2011">2011</option>
-                                  <option value="2012">2012</option>
-                                  <option value="2013">2013</option>
-                                  <option value="2014">2014</option>
-                                  <option value="2015">2015</option>
-                                  <option value="2016">2016</option>
-                                  <option value="2017">2017</option>
-                                  <option value="2018" selected="selected">2018</option>
-                                  <option value="2019">2019</option>
-                                  <option value="2020">2020</option>
-                                  <option value="2021">2021</option>
-                                  <option value="2022">2022</option>
-                                  <option value="2023">2023</option>
-                                  <option value="2024">2024</option>
-                                  <option value="2025">2025</option>
-                                  <option value="2026">2026</option>
-                                  <option value="2027">2027</option>
-                                  <option value="2028">2028</option>
-                                </select></div>
-                            </div>
-                            <button class="month-next" type="button">
-                              <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"></path>
-                                <path d="M0-.25h24v24H0z" fill="none"></path>
-                              </svg>
-                            </button>
-                          </div>
-                          <div class="datepicker-table-wrapper">
-                            <table cellpadding="0" cellspacing="0" class="datepicker-table" role="grid" aria-labelledby="pika-title-ch">
-                              <thead>
-                              <tr>
-                                <th scope="col"><abbr title="Sunday">S</abbr></th>
-                                <th scope="col"><abbr title="Monday">M</abbr></th>
-                                <th scope="col"><abbr title="Tuesday">T</abbr></th>
-                                <th scope="col"><abbr title="Wednesday">W</abbr></th>
-                                <th scope="col"><abbr title="Thursday">T</abbr></th>
-                                <th scope="col"><abbr title="Friday">F</abbr></th>
-                                <th scope="col"><abbr title="Saturday">S</abbr></th>
-                              </tr>
-                              </thead>
-                              <tbody>
-                              <tr class="pika-row">
-                                <td data-day="1" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="1">1</button>
-                                </td>
-                                <td data-day="2" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="2">2</button>
-                                </td>
-                                <td data-day="3" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="3">3</button>
-                                </td>
-                                <td data-day="4" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="4">4</button>
-                                </td>
-                                <td data-day="5" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="5">5</button>
-                                </td>
-                                <td data-day="6" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="6">6</button>
-                                </td>
-                                <td data-day="7" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="7">7</button>
-                                </td>
-                              </tr>
-                              <tr class="pika-row">
-                                <td data-day="8" class="is-today" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="8">8</button>
-                                </td>
-                                <td data-day="9" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="9">9</button>
-                                </td>
-                                <td data-day="10" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="10">10</button>
-                                </td>
-                                <td data-day="11" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="11">11</button>
-                                </td>
-                                <td data-day="12" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="12">12</button>
-                                </td>
-                                <td data-day="13" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="13">13</button>
-                                </td>
-                                <td data-day="14" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="14">14</button>
-                                </td>
-                              </tr>
-                              <tr class="pika-row">
-                                <td data-day="15" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="15">15</button>
-                                </td>
-                                <td data-day="16" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="16">16</button>
-                                </td>
-                                <td data-day="17" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="17">17</button>
-                                </td>
-                                <td data-day="18" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="18">18</button>
-                                </td>
-                                <td data-day="19" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="19">19</button>
-                                </td>
-                                <td data-day="20" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="20">20</button>
-                                </td>
-                                <td data-day="21" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="21">21</button>
-                                </td>
-                              </tr>
-                              <tr class="pika-row">
-                                <td data-day="22" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="22">22</button>
-                                </td>
-                                <td data-day="23" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="23">23</button>
-                                </td>
-                                <td data-day="24" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="24">24</button>
-                                </td>
-                                <td data-day="25" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="25">25</button>
-                                </td>
-                                <td data-day="26" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="26">26</button>
-                                </td>
-                                <td data-day="27" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="27">27</button>
-                                </td>
-                                <td data-day="28" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="28">28</button>
-                                </td>
-                              </tr>
-                              <tr class="pika-row">
-                                <td data-day="29" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="29">29</button>
-                                </td>
-                                <td data-day="30" class="" aria-selected="false">
-                                  <button class="datepicker-day-button" type="button" data-pika-year="2018" data-pika-month="3" data-pika-day="30">30</button>
-                                </td>
-                                <td class="is-empty"></td>
-                                <td class="is-empty"></td>
-                                <td class="is-empty"></td>
-                                <td class="is-empty"></td>
-                                <td class="is-empty"></td>
-                              </tr>
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-                        <div class="datepicker-footer">
-                          <button class="btn-flat datepicker-clear waves-effect" style="visibility: hidden;" type="button"></button>
-                          <div class="confirmation-btns">
-                            <button class="btn-flat datepicker-cancel waves-effect" type="button">Cancel</button>
-                            <button class="btn-flat datepicker-done waves-effect" type="button">Ok</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <input type="text" class="datepicker">
-                </div>
-              </div>
-            </div>
-            <br>
-            <!--  todo: total value, dispenser_id, issuer_id and other non settable options shoud be managed in js or coffee here -->
-            <div class="row">
-              <div class="actions">
-                <%= form.submit class: 'btn btn-primary' %>
-              </div>
-            </div>
-
+ -->
+        <div class="row form-group">
+          <div class="input-field col s12">
+            <%= form.text_area :professional_comment, as: :text, id: :rx_professional_comment, placeholder: 'Write your professional comment on the case here.', class: 'form-control' %>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="-input-field col s12">
+            <%= form.text_field :short_diagnosis, id: :rx_short_diagnosis, class: 'form-control', placeholder: 'Write short diagnosis' %>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="input-field col s12">
+            <%= form.text_area :full_diagnosis, as: :text, id: :rx_full_diagnosis, placeholder: 'Write full diagnosis with extra comments here', class: 'form-control' %>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="input-field col s12">
+            <%= form.label :starts_at %>
+            <%= form.date_select :starts_at, id: :rx_starts_at, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="row form-group">
+          <div class="input-field col s6">
+            <%= form.label :status %>
+            <%= form.text_field :status, id: :rx_status, class: 'form-control' %>
+          </div>
+        </div>
+        </div>
         </div>
 
+        <div class="card border-warning mb-3 text-center orange-gradient-bg" id="rx_settings">
+          <div class="card-title center rx-header">
+          <h4 class="">Rx Settings</h4>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="switch col s4">
+                <label>
+                  Regular drugs
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                  High alert drugs
+                </label>
+              </div>
 
-        <script>
+            </div>
+            <div class="row">
+              <!-- Disabled Switch -->
 
+              <div class="switch col s4">
+                <label>
+                  Private Rx
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                  Public Rx
+                </label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="switch col s4">
+                <label>
+                  Unexpirable
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                  Expirable
+                </label>
+              </div>
+              </div>
+            
+            <hr>
 
-        </script>
-      </div>
+            <div class="form-group">
+              <div class="input-field col s12">
+                <%= form.label :expires_at %>
+                <%= form.date_select :expires_at, class: 'form-control' %>
+              </div>
+            </div>  
+            </div>
+        <!--  todo: total value, dispenser_id, issuer_id and other non settable options shoud be managed in js or coffee here -->
     </div>
-  </div>
+    <br>
+    <div class="btn-group btn-group-justified">
+      <%= form.submit 'Next...', class: 'btn btn-primary' %>
+      <%= link_to 'Cancel Rx', rxes_path, class: 'btn btn-warning' %>
+    </div>
 
-
+    </div>
+   
 <% end %>

@@ -1,4 +1,4 @@
-class CompanyController < ApplicationController
+class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :destroy, :update]
   after_action :update_visit_count, only: [:show]
 
@@ -7,7 +7,7 @@ class CompanyController < ApplicationController
   end
 
   def new
-  end
+  end 
 
   def create
   end

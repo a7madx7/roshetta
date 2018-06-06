@@ -1,40 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @drug.image, alt: @drug.name %>
-<p>
-  <strong>Name:</strong>
-  <%= @drug.name %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @drug.price %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @drug.company %>
-</p>
-
-<p>
-  <strong>Market available:</strong>
-  <%= @drug.market_available %>
-</p>
-
-<p>
-  <strong>Professional comment:</strong>
-  <%= @drug.professional_comment %>
-</p>
-
-<p>
-  <strong>Invented at:</strong>
-  <%= @drug.invented_at %>
-</p>
-
-<p>
-  <strong>Market status:</strong>
-  <%= @drug.market_status %>
-</p>
-
-<%= link_to 'Edit', edit_drug_path(@drug) %> |
-<%= link_to 'Back', drugs_path %>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag @drug.image, alt: @drug.name %>
+        <span class="card-title">  <%= @drug.name %> </span>
+        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+      </div>
+      <div class="card-content">
+        <p><%= @drug.professional_comment %></p>
+        <p><%= @drug.current_price.value %>  <%= @drug.country.currency_apprev %></p>
+        <p>Manufacured by: <%= @drug.company.name.upcase %> </p>
+        <p>Market avaiable: <%= @drug.market_available %> </p>
+        <p>
+          <%- if @drug.invented_at %>
+            Invented in: <%= @drug.invented_at %>
+          <% end %>
+        </p>
+        <p>
+          Trading status: <%= @drug.market_status %>
+        </p>
+      </div>
+      <div class="card-footer">
+        <%= link_to 'Edit', edit_drug_path(@drug) %> |
+        <%= link_to 'Back', drugs_path %>
+      </div>
+    </div>
+  </div>
+</div>

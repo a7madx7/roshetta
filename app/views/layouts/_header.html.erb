@@ -1,0 +1,67 @@
+<div class="">
+  <aside class="sidebar clearfix">
+    <nav>
+      <%= link_to root_path do %>
+        <i class="fas fa-home"></i>
+      <% end %>
+      <%= link_to new_rx_path do %>
+        <i class="fas fa-prescription-bottle"></i>
+      <% end %>
+      <a href="#">
+        <i class="fas fa-heartbeat"></i>
+      </a>
+      <%= link_to questions_path do %>
+        <i class="fas fa-question"></i>
+      <% end %>
+      <a href="#">
+        <i class="far fa-lightbulb"></i>
+      </a>
+      <a href="#">
+        <i class="fas fa-cog"></i>
+      </a>
+      <%= link_to drugs_path do %>
+        <i class="fas fa-capsules"></i>
+      <% end %>
+      <%= link_to generics_path do %>
+        <i class="fas fa-flask"></i>
+      <% end %>
+      <a href="#">
+        <i class="fas fa-chart-pie"></i>
+      </a>
+    </nav>
+  </aside>
+  <div id="morphsearch" class="morphsearch">
+    <%= render 'layouts/search' %>
+    <div class="morphsearch-content">
+      <p class="text-muted hint">Use <i class="fas fa-hashtag"></i>: at the start of your search term to dispense
+        prescriptions <i class="far fa-smile"></i></p>
+      <p class="text-muted hint">Use <i class="fas fa-dollar-sign"></i>: at the start of your search term to search
+        for generics <i class="far fa-smile"></i></p>
+      <p class="text-muted hint">Use <i class="fas fa-at"></i>: at the start of your search term to search for
+        commercial drugs <i class="far fa-smile"></i></p>
+    </div>
+    <!-- /morphsearch-content -->
+    <span class="morphsearch-close"></span>
+  </div>
+  <!-- /morphsearch -->
+  <header class="codrops-header">
+    <h1>
+      <%= link_to root_path, id: 'logo' do %>
+        Roshetta
+      <% end %>
+    </h1>
+    <br/>
+    <h6>
+          <span class="text-muted" id="">Welcome to the era of digital prescriptions.
+            <%- if user_signed_in? %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                Sign out
+                <i class="fas fa-sign-out-alt"></i>
+              <% end %>
+            <% end %>
+            </span>
+    </h6>
+  </header>
+  <div class="overlay">
+  </div>
+</div>

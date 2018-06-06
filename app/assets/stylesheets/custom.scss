@@ -1,50 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+* {
+    text-transform: uppercase;
+}
+
+html,
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  background-color: #fcfcfc;
+    // height: 100%;
+}
+
+// html{
+//   border: 2px solid $primary-color;
+//   border-radius: 0px 0px 15px 15px;
+// }
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 main {
-  flex: 1 0 auto;
+    flex: 1 0 auto; // height: calc(100% - 50px);
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .main-logo {
-  height: 3rem;
-  margin-top: 0.5rem;
+    height: 3rem;
+    margin-top: 0.5rem;
 }
 
 .cover {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 .icon-container .icon-preview span {
-  text-align: left;
-  display: block;
-  font-size: 12px;
+    text-align: left;
+    display: block;
+    font-size: 12px;
 }
 
 .icon-container i {
-  font-size: 3em;
-  margin-bottom: 10px;
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
 .btn {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
-:not(pre) > code[class*="language-"] {
-  border-radius: 0.3em;
-  padding: 0.1em;
-}
-:not(pre) > code[class*="language-"], pre[class*="language-"] {
-  background: #f5f2f0 none repeat scroll 0 0;
+:not(pre)>code[class*="language-"] {
+    border-radius: 0.3em;
+    padding: 0.1em;
 }
 
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+    background: #f5f2f0 none repeat scroll 0 0;
+}
 
 .toc {
-  position: sticky;
-  top: 4rem;
-  max-height: calc(100vh - 4rem);
-  overflow-y: auto;
+    position: sticky;
+    top: 4rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+}
+
+.fifth {
+    height: 20%;
+}
+
+.third {
+    height: 30%;
+}
+
+.quarter {
+    height: 25%;
+}
+
+.half {
+    height: 50%;
+}
+
+.roshetta-main {
+    margin: 20px 40px;
+}
+
+.footer {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.new-rx input,
+.new-rx textarea {
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.rx-header {
+    background: rgba(227, 160, 26, 0.473);
+    border-radius: 3px 3px 15px 15px;
+    border-color: rgba(243, 164, 7, 0.671);
+}
+
+#rx_settings {
+    border-top: 5px solid;
+    // background: rgba(182, 176, 164, 0.329);
+}
+
+#rx_info {
+    border-top: 5px solid; // background: rgba(227, 160, 26, 0.137);
+}
+
+.orange-gradient-bg {
+    background: #FFEFBA;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #FFEFBA);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #FFEFBA);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

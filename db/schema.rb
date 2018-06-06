@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180422010057) do
+ActiveRecord::Schema.define(version: 20180528164853) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "question_id"
@@ -71,6 +71,9 @@ ActiveRecord::Schema.define(version: 20180422010057) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "inflation_factor", default: "1.12"
+    t.string "currency_symbol", default: "£", null: false
+    t.string "currency_name", default: "Egyptian Pound", null: false
+    t.string "currency_apprev", default: "EGP", null: false
   end
 
   create_table "diagnoses", force: :cascade do |t|
@@ -225,6 +228,7 @@ ActiveRecord::Schema.define(version: 20180422010057) do
     t.date "to_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "current", default: false, null: false
     t.index ["drug_id"], name: "index_prices_on_drug_id"
   end
 
@@ -246,6 +250,9 @@ ActiveRecord::Schema.define(version: 20180422010057) do
     t.string "preferred_charting_library", default: "highcharts"
     t.boolean "promoted", default: false
     t.boolean "advertised", default: false
+    t.string "first_name", default: "FIRST NAME GOES HERE", null: false
+    t.string "middle_name"
+    t.string "last_name", default: "LAST NAME GOES HERE", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
@@ -311,6 +318,23 @@ ActiveRecord::Schema.define(version: 20180422010057) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "searches", force: :cascade do |t|
+    t.string "term"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_searches_on_user_id"
+  end
+
+  create_table "side_effects", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.integer "generic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["generic_id"], name: "index_side_effects_on_generic_id"
+  end
+
   create_table "suggestion_terms", force: :cascade do |t|
     t.string "term"
     t.integer "drug_id"
@@ -341,6 +365,7 @@ ActiveRecord::Schema.define(version: 20180422010057) do
     t.string "username"
     t.integer "profile_id"
     t.string "role", default: "user", null: false
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["profile_id"], name: "index_users_on_profile_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

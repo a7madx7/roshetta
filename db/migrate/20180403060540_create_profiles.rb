@@ -1,8 +1,8 @@
 class CreateProfiles < ActiveRecord::Migration[5.1]
   def change
     create_table :profiles do |t|
-      t.string :mobile_phone, null: false
-      t.string :land_line
+      t.string :mobile_phone, null: false, default: '00'
+      t.string :land_line, null: false, default: '00'
       t.string :address
       t.integer :age, null: false, default: 24
       t.string :gender, null: false, default: 'Male'

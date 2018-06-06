@@ -1,0 +1,7 @@
+{
+  "utf8" => "✓", "authenticity_token" => "GGA7qStFMvRn/vnvZY8GX1QmvMoTFTMhZhJtJJHf5ZcYrroliUdyjnoS+PrH8yIO+3ho3IF22QVl/s6vrW9wnw==", "rx" => {
+    "patient" => {
+      "name" => "Ahmad hamdi emara"
+    }, "allowed_dispense_count" => "100000", "professional_comment" => "Epiliptiform activity.", "short_diagnosis" => "Epilepsy.", "full_diagnosis" => "TOnic clonic seizures, Accompanied with extreme pain.", "starts_at(1i)" => "2018", "starts_at(2i)" => "5", "starts_at(3i)" => "30", "status" => "active", "expires_at(1i)" => "2018", "expires_at(2i)" => "12", "expires_at(3i)" => "30"
+  }, "commit" => "Create Rx", "controller" => "rxes", "action" => "create"
+}

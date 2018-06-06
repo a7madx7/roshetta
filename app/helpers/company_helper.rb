@@ -8,7 +8,7 @@ module CompanyHelper
   end
 
   def companies_by_market_value_column
-    column_chart Drug.all.group(:company).sum(:price), height: '500px', library: library('Total value of all company drugs', 'Company', 'Total Value')
+    # column_chart Drug.all.group(:company).sum(:price), height: '500px', library: library('Total value of all company drugs', 'Company', 'Total Value')
   end
 
   def companies_by_drug_count_bar
