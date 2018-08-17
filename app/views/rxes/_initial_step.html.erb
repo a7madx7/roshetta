@@ -1,0 +1,29 @@
+ <div class="row">
+      <%= form.fields_for :patient, class: 'form-group' do |p| %>
+        <div class="input-field col s6">
+          <%= p.label :name, class: 'active', for: 'rx_patient_name' %>
+          <%= p.text_field :name,   class: 'form-control', placeholder: 'Patient full name goes here' %>
+        </div>
+      <% end %>
+
+
+      <div class="input-field col s6 form-group">
+        <%= form.label :allowed_dispense_count, for: 'rx_allowed_dispense_count' %>
+        <%= form.select :allowed_dispense_count, dispense_counts, {}, { class: 'form-control', id: 'rx_allowed_dispense_count' } %>
+      </div>
+</div>
+<div class="row form-group">
+  <div class="input-field col s12">
+    <%= form.text_area :professional_comment, as: :text, id: :rx_professional_comment, placeholder: 'Write your professional comment on the case here.', class: 'form-control' %>
+  </div>
+</div>
+<div class="row form-group">
+  <div class="-input-field col s12">
+    <%= form.text_field :short_diagnosis, id: :rx_short_diagnosis, class: 'form-control', placeholder: 'Write short diagnosis' %>
+  </div>
+</div>
+<div class="row form-group">
+  <div class="input-field col s12">
+    <%= form.text_area :full_diagnosis, as: :text, rows: 6, id: :rx_full_diagnosis, placeholder: 'Write full diagnosis with extra comments here', class: 'form-control' %>
+  </div>
+</div>

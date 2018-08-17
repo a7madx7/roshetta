@@ -39,5 +39,28 @@ $(document).ready(function () {
   // Add form-control class to select elements
   // var $selects = $('select');
   // $selects.removeClass('form-control').addClass('form-control');
+
+  $("input#hide_password").click(function () {
+
+    $this = $(this);
+    // Check the checkbox state
+    if ($this.is(':checked')) {
+      $this.attr('checked', 'false');
+      // Changing type attribute
+      $("#encryption_password").attr("type", "text");
+
+      // Change the Text
+      $("#toggleText").text("Hide");
+    } else {
+      $this.attr('checked', 'true');
+
+      // Changing type attribute
+      $("#encryption_password").attr("type", "password");
+
+      // Change the Text
+      $("#toggleText").text("Show");
+    }
+
+  });
 });
 

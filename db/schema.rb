@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180528164853) do
+ActiveRecord::Schema.define(version: 20180701003045) do
 
   create_table "answers", force: :cascade do |t|
     t.integer "question_id"
@@ -171,6 +171,11 @@ ActiveRecord::Schema.define(version: 20180528164853) do
     t.integer "cached_weighted_total", default: 0
     t.float "cached_weighted_average", default: 0.0
     t.integer "prescribe_count", default: 0, null: false
+    t.string "induced_by", default: "UNKNOWN ENZYME NAME"
+    t.string "inhibited_by", default: "UNKNOWN ENZYME NAME"
+    t.string "inhibits", default: "UNKNOWN ENZYME NAME"
+    t.string "induces", default: "UNKNOWN ENZYME NAME"
+    t.string "type", default: "Prodrug"
   end
 
   create_table "interactions", force: :cascade do |t|
@@ -366,6 +371,7 @@ ActiveRecord::Schema.define(version: 20180528164853) do
     t.integer "profile_id"
     t.string "role", default: "user", null: false
     t.boolean "admin", default: false, null: false
+    t.string "rx_default_password", default: "roshetta"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["profile_id"], name: "index_users_on_profile_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

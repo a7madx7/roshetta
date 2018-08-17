@@ -1,7 +1,7 @@
 <div class="row new-rx card border-warning mb-3 text-center orange-gradient-bg" id="rx_info">  
 
     <div class="card-title center rx-header">
-      <h4 class="">Rx Starting Info</h4>
+      <h4 class="">Rx <%=@rx.current_step %> step</h4>
     </div>
     <div class="card-body">
        <%= form_with(model: rx, local: true, html: {class: 'col s12 m8'}) do |form| %>
@@ -17,118 +17,10 @@
           </div>
         <% end %>
 
-        <div class="row">
-          <%= form.fields_for :patient, class: 'form-group' do |p| %>
-            <div class="input-field col s6">
-              <%= p.label :name, class: 'active', for: 'rx_patient_name' %>
-              <%= p.text_field :name,   class: 'form-control', placeholder: 'Patient full name goes here' %>
-            </div>
-          <% end %>
-
-
-          <div class="input-field col s6 form-group">
-            <%= form.label :allowed_dispense_count, for: 'rx_allowed_dispense_count' %>
-            <%= form.select :allowed_dispense_count, dispense_counts, {}, { class: 'form-control', id: 'rx_allowed_dispense_count' } %>
-          </div>
-
+        <%= render "#{@rx.current_step}_step", form: form %>
+        <div class="btn-group btn-group-justified">
+          <%= form.submit 'Next...', class: 'btn btn-primary' %>
+          <%=form.submit 'Back', name: 'back_button', class: 'btn btn-warning' unless @rx.first_step? %>
         </div>
-
-<!--
-        <div class="input-group mb-3">
-          <div class="custom-file">
-            <%# form.file_field :picture, class: 'custom-file-input', id: :rx_picture %>
-            <label class="custom-file-label" for="inputGroupFile01">Choose a related photo?</label>
-          </div>
-        </div>
-        <br />
-
- -->
-        <div class="row form-group">
-          <div class="input-field col s12">
-            <%= form.text_area :professional_comment, as: :text, id: :rx_professional_comment, placeholder: 'Write your professional comment on the case here.', class: 'form-control' %>
-          </div>
-        </div>
-        <div class="row form-group">
-          <div class="-input-field col s12">
-            <%= form.text_field :short_diagnosis, id: :rx_short_diagnosis, class: 'form-control', placeholder: 'Write short diagnosis' %>
-          </div>
-        </div>
-        <div class="row form-group">
-          <div class="input-field col s12">
-            <%= form.text_area :full_diagnosis, as: :text, id: :rx_full_diagnosis, placeholder: 'Write full diagnosis with extra comments here', class: 'form-control' %>
-          </div>
-        </div>
-        <div class="row form-group">
-          <div class="input-field col s12">
-            <%= form.label :starts_at %>
-            <%= form.date_select :starts_at, id: :rx_starts_at, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="row form-group">
-          <div class="input-field col s6">
-            <%= form.label :status %>
-            <%= form.text_field :status, id: :rx_status, class: 'form-control' %>
-          </div>
-        </div>
-        </div>
-        </div>
-
-        <div class="card border-warning mb-3 text-center orange-gradient-bg" id="rx_settings">
-          <div class="card-title center rx-header">
-          <h4 class="">Rx Settings</h4>
-          </div>
-          <div class="card-body">
-            <div class="row">
-              <div class="switch col s4">
-                <label>
-                  Regular drugs
-                  <input type="checkbox">
-                  <span class="lever"></span>
-                  High alert drugs
-                </label>
-              </div>
-
-            </div>
-            <div class="row">
-              <!-- Disabled Switch -->
-
-              <div class="switch col s4">
-                <label>
-                  Private Rx
-                  <input type="checkbox">
-                  <span class="lever"></span>
-                  Public Rx
-                </label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="switch col s4">
-                <label>
-                  Unexpirable
-                  <input type="checkbox">
-                  <span class="lever"></span>
-                  Expirable
-                </label>
-              </div>
-              </div>
-            
-            <hr>
-
-            <div class="form-group">
-              <div class="input-field col s12">
-                <%= form.label :expires_at %>
-                <%= form.date_select :expires_at, class: 'form-control' %>
-              </div>
-            </div>  
-            </div>
-        <!--  todo: total value, dispenser_id, issuer_id and other non settable options shoud be managed in js or coffee here -->
     </div>
-    <br>
-    <div class="btn-group btn-group-justified">
-      <%= form.submit 'Next...', class: 'btn btn-primary' %>
-      <%= link_to 'Cancel Rx', rxes_path, class: 'btn btn-warning' %>
-    </div>
-
-    </div>
-   
 <% end %>

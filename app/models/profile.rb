@@ -12,4 +12,21 @@ class Profile < ApplicationRecord
   def name
     "#{first_name unless first_name.empty?} #{middle_name unless middle_name.empty?} #{last_name unless last_name.empty?}"
   end
+
+  def physician?
+    profession.casecmp?('physician')
+  end
+
+  def pharmacist?
+    profession.casecmp?('pharmacist')
+  end
+
+  def company?
+    profession.casecmp?('company')
+  end
+
+  def hospital?
+    profession.casecmp?('hospital')
+  end
+
 end

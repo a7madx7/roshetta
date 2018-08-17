@@ -6,6 +6,8 @@
 @import 'custom';
 @import 'welcome';
 @import 'bootstrap';
+@import 'switch_box';
+
 nav,
 nav a,
 header a {
@@ -42,4 +44,29 @@ header a {
 
 .btn-primary{
   background-color: $primary-color;
+}
+
+#encryption_password {
+    font-size: 3em;
+    font-weight: 600;
+    color: orange;
+    text-align: center;
+}
+
+.rx-list {
+    color: orange;
+    background: rgba(245, 226, 192, 0.5);
+    min-height: 60px;
+    border: 2px solid;
+}
+
+.search_drugs {
+    width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+.search_drugs:focus {
+    width: 100%;
 }

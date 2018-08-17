@@ -1,0 +1,66 @@
+    
+    <div class="row form-group">
+      <div class="input-field col s12">
+        <%= form.label :starts_at %>
+        <%= form.date_select :starts_at, id: :rx_starts_at, class: 'form-control' %>
+      </div>
+    </div>
+    <div class="row form-group">
+      <div class="input-field col s6">
+        <%= form.label :status %>
+        <%= form.text_field :status, id: :rx_status, class: 'form-control' %>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="card border-warning mb-3 text-center orange-gradient-bg" id="rx_settings">
+      <div class="card-title center rx-header">
+      <h4 class="">Rx Settings</h4>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="switch col s4">
+            <label>
+              Regular drugs
+              <input type="checkbox">
+              <span class="lever"></span>
+              High alert drugs
+            </label>
+          </div>
+
+        </div>
+        <div class="row">
+          <!-- Disabled Switch -->
+
+          <div class="switch col s4">
+            <label>
+              Private Rx
+              <input type="checkbox">
+              <span class="lever"></span>
+              Public Rx
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="switch col s4">
+            <label>
+              Unexpirable
+              <input type="checkbox">
+              <span class="lever"></span>
+              Expirable
+            </label>
+          </div>
+          </div>
+        
+        <hr>
+
+        <div class="form-group">
+          <div class="input-field col s12">
+            <%= form.label :expires_at %>
+            <%= form.date_select :expires_at, class: 'form-control' %>
+          </div>
+        </div>  
+        </div>
+    <!--  todo: total value, dispenser_id, issuer_id and other non settable options shoud be managed in js or coffee here -->
+</div>

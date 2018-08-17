@@ -3,12 +3,20 @@
     <%= notice %>
   </p>
   
-  <h1>Rxes</h1>
-  
-  <h2><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></h2>
+  <%- if current_user.profile.physician? or current_user.admin? %>
+    <h1>Your prescriptions</h1>
+    
+   <div class="card-group">
+      <% @rxes.each do |rx| %>
+        <div class="card">
+          <%= link_to  time_ago_in_words(rx.created_at), rx %>
+        </div>
+      <% end %>
+   </div>
+    
+    <%= link_to 'New Rx', new_rx_path %>
 
-  <%= render 'layouts/card.html.erb', card_title: 'Rx', card_header: 'Column Names', card_text: model_column_names(Rx), card_footer: '' %>
-  
-  <%= link_to 'New Rx', new_rx_path %>
+  <% else %>
 
+  <% end %>
 </div>

@@ -37,4 +37,7 @@ class Rx < ApplicationRecord
 
   has_many :rx_items
   has_many :drugs, through: :rx_items
+  has_one :patient
+  #todo remove the patient_id from the rxes table
+  accepts_nested_attributes_for :patient, reject_if: ->(attributes){ attributes['name'].blank? }, allow_destroy: true
 end
